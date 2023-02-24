@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歌手</title>
+    <style>
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+        }
+
+        #banner {
+            width: 100%;
+            height: 90px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #ul1 {
+            width: 100%;
+            height: 90px;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-size: 1.1em;
+            line-height: 90px;
+            text-align: center;
+        }
+
+        #ul1 li {
+            float: left;
+            padding: 0px;
+            color: black;
+        }
+
+        #ul1>li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #ul1>:nth-child(2):hover,
+        #ul1>:nth-child(11):hover {
+            color: rgb(255, 255, 255);
+        }
+
+        #ul12>:nth-child(1):hover {
+            color: black;
+        }
+
+        #ul11 li:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(55, 190, 127);
+        }
+
+        #ul1>:nth-child(1) {
+            width: 240px;
+            height: 90px;
+            background-image: url("pic/logo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 80px;
+        }
+
+        #ul1>:nth-child(2) {
+            width: 90px;
+            height: 90px;
+            background-color: rgb(55, 190, 127);
+            color: white;
+        }
+
+        #ul1>:nth-child(3) {
+            width: 100px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(4) {
+            width: 100px;
+            height: 30px;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 1.1em;
+        }
+
+        #ul1>:nth-child(5) {
+            width: 95px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(6) {
+            width: 70px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(7) {
+            width: 30px;
+            height: 30px;
+            margin: 32px 15px 0 12%;
+        }
+
+        #ul1>:nth-child(8) {
+            width: 65px;
+            height: 90px;
+            position: relative;
+            top: 0px;
+            right: 0%;
+        }
+
+        #ul1>:nth-child(9) {
+            width: 110px;
+            height: 40px;
+            margin-top: 26px;
+            margin-left: 0px;
+            border-radius: 3px;
+            color: rgb(255, 255, 255);
+            font-size: 0.78em;
+            line-height: 40px;
+            position: relative;
+            top: 0px;
+            right: 0%;
+            background-color:rgb(56, 201, 133)
+        }
+
+        #ul1>:nth-child(7)>ul {
+            width: 100%;
+            height: 40px;
+            margin: 27px 0 0 0;
+            padding: 0px;
+            list-style: none;
+        }
+
+        #txt {
+            display: block;
+            width: 200px;
+            height: 36px;
+            margin: 0px;
+            position: absolute;
+            top: 35px;
+            left: 58%;
+            font-size: 0.75em;
+            color: rgb(190, 190, 190);
+            background-color: white;
+            border: 1px solid rgb(194, 194, 194);
+            border-radius: 2px;
+            background-image: url("pic/fu2.png");
+            background-size: 20% 100%;
+            background-position-x: right;
+            background-position-y: center;
+            background-repeat: no-repeat;
+        }
+
+        #ul11 {
+            display: none;
+            list-style: none;
+            width: 120px;
+            height: 80px;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        #ul11 li {
+            width: 90%;
+            height: 40px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 0.9em;
+            background-color: white;
+            border: 1px solid rgb(212, 212, 212);
+        }
+
+        #ul12 {
+            display: none;
+            width: 160px;
+            height: 150px;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+            border: 0.4px solid rgba(207, 207, 207, 0.678);
+            border-radius: 5px;
+            position: relative;
+            top: 10px;
+            left: 17%;
+            z-index: 1;
+            list-style: none;
+        }
+
+        #ul12>:nth-child(1) {
+            width: 100%;
+            height: 80px;
+            margin-top: 0px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 0.8em;
+            color: rgb(0, 0, 0);
+
+        }
+
+        input.btn2 {
+            width: 140px;
+            height: 28px;
+            margin-top: 32px;
+            margin-left: 10px;
+            background-color: rgb(56, 201, 133);
+            font-size: 0.8em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+        #list {
+            width: 100%;
+            height: 45px;
+            border-top: 1px solid rgb(228, 228, 228);
+        }
+
+        #list ul {
+            width: 75%;
+            height: 45px;
+            margin-top: 0px;
+            margin-left: 22%;
+            padding: 0px;
+            list-style: none;
+            font-size: 1em;
+            line-height: 45px;
+            text-align: center;
+        }
+
+        #list ul li {
+            float: left;
+            padding: 0px 22px;
+        }
+
+        #list ul li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #list ul li a:link,
+        #list ul li a:visited {
+            color: black;
+        }
+
+        #list ul li a:hover,
+        #list ul li a:active {
+            color: rgb(55, 190, 127);
+        }
+
+        #kuang1 {
+            width: 175px;
+            height: 130px;
+            position: fixed;
+            top: 170px;
+            left: 81%;
+            background-color: white;
+            border: 3px solid rgba(202, 202, 202, 0.171);
+            border-radius: 3%;
+            z-index: 1;
+        }
+
+        #kuang1 ul {
+            width: 100%;
+            height: 130px;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #kuang1>ul>:nth-child(1) {
+            margin-top: 7px;
+            margin-left: 10%;
+            width: 80%;
+            height: 42px;
+            background-image: url("pic/logo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 40px;
+        }
+
+        #kuang1>ul>:nth-child(2) {
+            margin-top: 7px;
+            margin-left: 6%;
+            width: 90%;
+            height: 25px;
+            font-size: 1.05em;
+            color: rgb(168, 168, 168);
+        }
+
+        #kuang1>ul>:nth-child(3) {
+            margin-top: 7px;
+            margin-left: 8%;
+            width: 83%;
+            height: 33px;
+            font-size: 1.05em;
+            color: rgb(168, 168, 168);
+        }
+
+        input.btn1 {
+            width: 100%;
+            height: 33px;
+            background-color: rgb(56, 201, 133);
+            font-size: 1.05em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+        #kuang2 {
+            width: 55px;
+            height: 140px;
+            position: fixed;
+            top: 350px;
+            left: 92%;
+            z-index: 1;
+        }
+
+        #kuang2 ul {
+            width: 100%;
+            height: 130px;
+            list-style: none;
+            margin-left: 12%;
+            margin-top: 0px;
+            padding: 0px;
+        }
+
+        #kuang2 ul li {
+            width: 70%;
+            height: 38px;
+            list-style: none;
+            margin-top: 3px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(201, 201, 201);
+            text-align: center;
+            line-height: 38px;
+            font-size: 0.95em;
+        }
+
+        #kuang2>ul>:nth-child(3) {
+            background-image: url("pic/fu1.jpg");
+            background-size: 100% 38px;
+            background-repeat: no-repeat;
+        }
+
+        #kuang3 {
+            width: 100%;
+            height: 400px;
+            margin: 0px;
+            padding: 0px;
+            background-image: url("pic/bgi.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #kuang3>:nth-child(1) {
+            width: 150px;
+            height: 50px;
+            padding: 0px;
+            position: relative;
+            top: 50px;
+            left: 43.5%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.2em;
+            color: white;
+            border: 1px solid rgb(145, 145, 145);
+        }
+
+        #kuang3>:nth-child(1):hover {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+
+        #content {
+            width: 100%;
+            height: auto;
+        }
+
+        #content div:nth-child(1) ul {
+            font-size: 14px;
+            font-family: "微软雅黑";
+            margin-left: 10px;
+            margin-bottom: 36px;
+            padding-top: 15px;
+            list-style: none;
+        }
+
+        #content div:nth-child(1) ul:nth-child(2),
+        #content div:nth-child(1) ul:nth-child(3),
+        #content div:nth-child(1) ul:nth-child(4) {
+            margin-bottom: 30px;
+        }
+
+        #content div:nth-child(1) ul li {
+            float: left;
+            padding: 0 15px;
+            margin: 4px 0 0 0;
+            text-align: center;
+        }
+
+        #content div:nth-child(1) ul li:nth-child(1) {
+            padding: 0px;
+            margin: 0 10px 0 0;
+            width: 53px;
+            height: 27px;
+            line-height: 27px;
+            text-align: center;
+            color: white;
+            background-color: rgb(56, 201, 133);
+        }
+
+        #content>:nth-child(1)>:nth-child(1)>li:hover,
+        #content>:nth-child(1)>:nth-child(2)>li:hover,
+        #content>:nth-child(1)>:nth-child(3)>li:hover,
+        #content>:nth-child(1)>:nth-child(4)>li:hover {
+            color: rgb(56, 201, 133);
+        }
+
+        #content>:nth-child(1)>:nth-child(1)>:nth-child(1):hover,
+        #content>:nth-child(1)>:nth-child(2)>:nth-child(1):hover,
+        #content>:nth-child(1)>:nth-child(3)>:nth-child(1):hover,
+        #content>:nth-child(1)>:nth-child(4)>:nth-child(1):hover {
+            color: white;
+        }
+
+
+        #innercontent {
+            width: 92%;
+            margin: 40px auto;
+            min-height: 250px;
+        }
+
+        #innercontent ul {
+            list-style: none;
+            width: 19%;
+            min-height: 250px;
+            float: left;
+            padding: 0px;
+            margin: 0 4px 8px 6px;
+            background-color: rgba(243, 243, 243, 0.322);
+        }
+
+        #innercontent ul li {
+            width: 100%;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        #innercontent ul li:nth-child(1) {
+            margin-top: 30px;
+        }
+
+        #innercontent ul li img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        @media screen and (min-width:1200px) {
+
+            #ul1>:nth-child(8) {
+                width: 65px;
+                height: 90px;
+                position: relative;
+                top: 0px;
+                left: 3%;
+            }
+
+            #ul1>:nth-child(9) {
+                width: 110px;
+                height: 40px;
+                margin-top: 26px;
+                margin-left: 0px;
+                background-color: rgb(56, 201, 133);
+                border-radius: 3px;
+                color: rgb(255, 255, 255);
+                font-size: 0.78em;
+                line-height: 40px;
+                position: relative;
+                top: 0px;
+                left: 3%;
+            }
+        }
+
+        @media screen and (max-width:1160px) {
+            #txt {
+                display: none;
+            }
+
+            #ul1>:nth-child(7) {
+                width: 38px;
+                height: 37px;
+                position: relative;
+                top: 26px;
+                left: 0;
+                background-color: rgb(255, 255, 255);
+                margin: 0px;
+                background-image: url("pic/fu2.png");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                border: 1px solid rgb(194, 194, 194);
+                border-radius: 2px;
+            }
+        }
+
+        @media screen and (max-width:1040px) {
+
+            #con2,
+            #list {
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <ul id="ul1">
+            <li></li>
+            <li>音乐馆</li>
+            <li>我的音乐</li>
+            <li id="u1">客户端
+                <ul id="ul12">
+                    <li>
+                        <p>HQ高品质 全员开启</p>
+                        <p>独家音效 全面升级</p>
+                        <p>轻盈视觉 动态皮肤</p>
+                    </li>
+                    <li><input type="button" value="下载体验" class="btn2"></li>
+                </ul>
+            </li>
+            <li>开放平台</li>
+            <li>VIP</li>
+            <li id="txt1">
+                <ul>
+                    <li><input type="text" id="txt" value="搜索音乐、MV、歌单、用户"></li>
+                </ul>
+            </li>
+            <li>登录</li>
+            <li id="u2">开通VIP
+                <ul id="ul11">
+                    <li>开通绿钻豪华版</li>
+                    <li>开通付费包</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <div id="list">
+        <ul>
+            <li><a href="shouye.html">首页</a></li>
+            <li><a href="#">歌手</a></li>
+            <li>新碟</li>
+            <li>排行榜</li>
+            <li>分类歌单</li>
+            <li>电台</li>
+            <li>MV</li>
+            <li><a href="album.html">数字专辑</a></li>
+            <li>票务</li>
+        </ul>
+    </div>
+    <div id="kuang1">
+        <ul>
+            <li></li>
+            <li>千万高品质曲库尽享</li>
+            <li><input type="button" value="客户端下载" class="btn1"></li>
+        </ul>
+    </div>
+    <div id="kuang2">
+        <ul>
+            <li><a href="#banner">︿</a></li>
+            <li>反馈</li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="kuang3">
+        <div>立即登录</div>
+    </div>
+    <div id="content">
+        <div>
+            <ul>
+                <li>热门</li>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+                <li>E</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>I</li>
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+                <li>M</li>
+                <li>N</li>
+                <li>O</li>
+                <li>P</li>
+                <li>Q</li>
+                <li>R</li>
+                <li>S</li>
+                <li>T</li>
+                <li>U</li>
+                <li>V</li>
+                <li>W</li>
+                <li>X</li>
+                <li>Y</li>
+                <li>Z</li>
+                <li>#</li>
+            </ul>
+            <ul id="add">
+                <li>全部</li>
+                <li>内地</li>
+                <li>港台</li>
+                <li>欧美</li>
+                <li>日本</li>
+                <li>韩国</li>
+            </ul>
+            <ul id="sex">
+                <li>全部</li>
+                <li>男</li>
+                <li>女</li>
+                <li>组合
+                <li>
+            </ul>
+            <ul>
+                <li>全部</li>
+                <li>流行</li>
+                <li>说唱</li>
+                <li>国风</li>
+                <li>摇滚</li>
+                <li>电子</li>
+                <li>民谣</li>
+                <li>R&B</li>
+                <li>民族乐</li>
+                <li>轻音乐</li>
+                <li>爵士</li>
+                <li>古典</li>
+                <li>乡村</li>
+                <li>蓝调</li>
+            </ul>
+        </div>
+        <div id="innercontent">
+
+        </div>
+    </div>
+</body>
+<script>
+
+    var productJson = {
+        "productJsonList": [
+            {
+                "add": "港台",
+                "url": "pic1",
+                "name": "周杰伦",
+                "sex": "男"
+            },
+            {
+                "add": "内地",
+                "url": "pic2",
+                "name": "任然",
+                "sex": "女"
+            },
+            {
+                "add": "内地",
+                "url": "pic3",
+                "name": "阿肆",
+                "sex": "女"
+            },
+            {
+                "add": "港台",
+                "url": "pic4",
+                "name": "林俊杰",
+                "sex": "男"
+            },
+            {
+                "add": "内地",
+                "url": "pic5",
+                "name": "薛之谦",
+                "sex": "男"
+            },
+
+            {
+                "add": "港台",
+                "url": "pic6",
+                "name": "陈奕迅",
+                "sex": "男"
+            },
+
+            {
+                "add": "内地",
+                "url": "pic7",
+                "name": "李荣浩",
+                "sex": "男"
+            },
+
+            {
+                "add": "内地",
+                "url": "pic8",
+                "name": "周深",
+                "sex": "男"
+            },
+
+            {
+                "add": "内地",
+                "url": "pic9",
+                "name": "张杰",
+                "sex": "男"
+            },
+
+            {
+                "add": "内地",
+                "url": "pic10",
+                "name": "黄霄雲",
+                "sex": "女"
+            },
+
+            {
+                "add": "港台",
+                "url": "pic11",
+                "name": "莫文蔚",
+                "sex": "女"
+            },
+
+            {
+                "add": "港台",
+                "url": "pic12",
+                "name": "五月天",
+                "sex": "组合"
+            },
+
+            {
+                "add": "港台",
+                "url": "pic13",
+                "name": "张韶涵",
+                "sex": "女"
+            },
+            {
+                "add": "港台",
+                "url": "pic14",
+                "name": "张惠妹",
+                "sex": "女"
+            },
+            {
+                "add": "港台",
+                "url": "pic15",
+                "name": "容祖儿",
+                "sex": "女"
+            },
+            {
+                "add": "欧美",
+                "url": "pic16",
+                "name": "24kGoldn",
+                "sex": "男"
+            },
+            {
+                "add": "欧美",
+                "url": "pic17",
+                "name": "Vicetone",
+                "sex": "组合"
+            },
+            {
+                "add": "欧美",
+                "url": "pic18",
+                "name": "Taylor Swift",
+                "sex": "女"
+            },
+            {
+                "add": "欧美",
+                "url": "pic19",
+                "name": "Billie Eilish",
+                "sex": "女"
+            },
+            {
+                "add": "欧美",
+                "url": "pic20",
+                "name": "Justin Bieber",
+                "sex": "男"
+            },
+            {
+                "add": "日本",
+                "url": "pic21",
+                "name": "米津玄師 (よねづ けんし)",
+                "sex": "男"
+            },
+            {
+                "add": "日本",
+                "url": "pic22",
+                "name": "久石让 (ひさいし じょう)",
+                "sex": "男"
+            },
+            {
+                "add": "日本",
+                "url": "pic23",
+                "name": "菅田将晖 (すだ まさき)",
+                "sex": "男"
+            },
+            {
+                "add": "日本",
+                "url": "pic24",
+                "name": "高梨康治 (たかなし やすはる)",
+                "sex": "男"
+            },
+            {
+                "add": "日本",
+                "url": "pic25",
+                "name": "YOASOBI (ヨアソビ)",
+                "sex": "组合"
+            }
+        ]
+    };
+
+    var innercontent = document.getElementById("innercontent");
+    initialSetImage();
+    function initialSetImage() {
+        var json1 = productJson.productJsonList;
+        for (var i = 0; i < json1.length; i++) {
+            var obj = json1[i];
+            createImage(obj.name, obj.url);
+        }
+    }
+
+    function createImage(myname, url) {
+        var myUl = document.createElement("ul");
+        var myli1 = document.createElement("li");
+        var myli2 = document.createElement("li");
+        var myText = document.createTextNode(myname);
+        myli2.appendChild(myText);
+        var myImg = document.createElement("img");
+        myImg.setAttribute("src", "pic/" + url + ".jpg");
+        myli1.appendChild(myImg);
+        myUl.appendChild(myli1);
+        myUl.appendChild(myli2);
+        innercontent.appendChild(myUl);
+    }
+
+    var selectMenuName = "";
+    var menuNameArr = ["内地", "港台", "欧美", "日本", "韩国"]
+    var addUL = document.getElementById("add").getElementsByTagName("li");
+    for (var i = 0; i < addUL.length; i++) {
+        addUL[i].indexNum = i;
+        addUL[i].onclick = function () {
+            innercontent.innerHTML = "";
+            selectMenuName = menuNameArr[this.indexNum - 1];
+            setImage(selectMenuName);
+        }
+    }
+
+    var selectMenname = "";
+    var menuNamearr = ["男", "女", "组合"];
+    var addUL = document.getElementById("sex").getElementsByTagName("li");
+    for (var i = 0; i < addUL.length; i++) {
+        addUL[i].indexNum = i;
+        addUL[i].onclick = function () {
+            innercontent.innerHTML = "";
+            selectMenuname = menuNamearr[this.indexNum - 1];
+            setimage(selectMenuname);
+        }
+    }
+
+    function setImage(menuName) {
+        var URL = "";
+        var myName = "";
+        var json1 = productJson.productJsonList;
+        for (var i = 0; i < json1.length; i++) {
+            var obj = json1[i];
+            if (menuName == obj.add) {
+                URL = obj.url;
+                myName = obj.name;
+                createImage(myName, URL);
+            }
+        }
+    }
+
+    function setimage(menuName) {
+        var URL = "";
+        var myName = "";
+        var json1 = productJson.productJsonList;
+        for (var i = 0; i < json1.length; i++) {
+            var obj = json1[i];
+            if (menuName == obj.sex) {
+                URL = obj.url;
+                myName = obj.name;
+                createImage(myName, URL);
+            }
+        }
+    }
+    window.onload = init;
+    function init() {
+        var txt=document.getElementById("txt");
+        txt.onmouseover=function(){
+            txt.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt.onmouseout=function(){
+            txt.style.backgroundImage="url('pic/fu2.png')";
+        }
+
+        var txt1=document.getElementById("txt1");
+        txt1.onmouseover=function(){
+            txt1.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt1.onmouseout=function(){
+            txt1.style.backgroundImage="url('pic/fu2.png')";
+        }
+
+        var l1 = document.getElementById("u1");
+        u1.onmouseover = function () {
+            document.getElementById("ul12").style.display = "block";
+        }
+        u1.onmouseout = function () {
+            document.getElementById("ul12").style.display = "none";
+        }
+
+        var u2 = document.getElementById("u2");
+        u2.onmouseover = function () {
+            document.getElementById("ul11").style.display = "block";
+        }
+        u2.onmouseout = function () {
+            document.getElementById("ul11").style.display = "none";
+        }
+
+        var txt=document.getElementById("txt");
+        txt.onmouseover=function(){
+            txt.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt.onmouseout=function(){
+            txt.style.backgroundImage="url('pic/fu2.png')";
+        }
+
+        var txt1=document.getElementById("txt1");
+        txt1.onmouseover=function(){
+            txt1.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt1.onmouseout=function(){
+            txt1.style.backgroundImage="url('pic/fu2.png')";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <style>
+        #left {
+            width: 270px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        #pic{
+            width: 100%;
+            height: 100%;
+        }
+        #qq {
+            width: 150px;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-image: url("pic/t11.png");
+            background-repeat: no-repeat;
+            background-size: 150px 60px;
+            background-position: left top;
+            z-index: 1001;
+        }
+
+        #right {
+            margin: 0 0 0 25%;
+            width: 860px;
+            height: 600px;
+        }
+
+        #banner {
+            width: 100%;
+            height: 40px;
+            margin: 15px 0 0 0;
+        }
+
+        #banner ul {
+            margin: 0 0 0 70%;
+            list-style: none;
+            width: 25%;
+            height: 40px;
+        }
+
+        #u1 {
+            margin: 5px 0 0 0;
+            width: 40%;
+            text-align: left;
+            font-size: 1em;
+            line-height: 27px;
+            height: 27px;
+            color: rgb(180, 180, 180);
+            float: left;
+        }
+
+        #banner>ul>:nth-child(2) {
+            margin: 5px 0 0 10%;
+            width: 36%;
+            text-align: center;
+            font-size: 1em;
+            line-height: 27px;
+            height: 27px;
+            color: rgb(180, 180, 180);
+            float: left;
+        }
+
+        #u1>ul {
+            display: none;
+            list-style: none;
+            width: 80%;
+            height: 54px;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        #ul1>li {
+            width: 100%;
+            height: 27px;
+            padding: 0px;
+            text-align: left;
+            font-size: 1em;
+        }
+
+        #ul1>:nth-child(1) {
+            margin: 10px 0 5px 0;
+        }
+
+        #banner1 {
+            width: 40%;
+            height: 50px;
+            margin: 10px 0 0 35%;
+            font-size: 1.3em;
+        }
+
+        #banner2 {
+            width: 40%;
+            height: 50px;
+            margin: 10px 0 0 35%;
+            font-size: 1.15em;
+        }
+
+        #main {
+            width: 54%;
+            margin: 30px auto;
+        }
+
+        #main>input[type="text"] {
+            width: 95%;
+            height: 50px;
+            margin: 10px auto;
+            border: 1px solid #b3b3b3;
+            border-radius: 5px;
+            padding-left: 20px;
+            font-family: "微软雅黑";
+            font-size: 20px;
+            color: #868686;
+        }
+
+        #main1 {
+            float: left;
+            width: 32%;
+            height: 50px;
+        }
+
+        #main1>select {
+            width: 100%;
+            height: 53.5px;
+            margin: 10px auto;
+            border: 1px solid #b3b3b3;
+            border-radius: 5px;
+            padding-left: 10px;
+            font-family: "微软雅黑";
+            font-size: 20px;
+            color: #000000;
+        }
+
+        #main2 {
+            float: left;
+            width: 60%;
+            height: 50px;
+            margin: 10px 15px;
+        }
+
+        #main2>input[type="text"] {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #b3b3b3;
+            border-radius: 5px;
+            padding-left: 20px;
+            font-family: "微软雅黑";
+            font-size: 20px;
+            color: #868686;
+        }
+
+        #main3 {
+            width: 100%;
+            height: 20px;
+            font-size: 0.85em;
+            color: #868686;
+        }
+
+        #main4 {
+            float: left;
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        #main4>input[type="text"] {
+            width: 27%;
+            height: 47px;
+            float: left;
+            border: 1px solid #b3b3b3;
+            border-radius: 5px;
+            padding-left: 20px;
+            font-family: "微软雅黑";
+            font-size: 20px;
+            color: #868686;
+            display: none;
+        }
+
+        #main4>input[type="button"] {
+            width: 65%;
+            height: 50px;
+            float: left;
+            margin: 0 0 0 12px;
+            border: 1px solid #b3b3b3;
+            background-color: #3487ff;
+            border-radius: 5px;
+            padding-left: 20px;
+            font-family: "微软雅黑";
+            font-size: 22px;
+            color: #ffffff;
+            display: none;
+        }
+
+        #main>input[type="button"] {
+            width: 100%;
+            height: 60px;
+            margin: 20px 0 0 0;
+            border: 1px solid #b3b3b3;
+            background-color: #3487ff;
+            border-radius: 5px;
+            padding-left: 20px;
+            font-family: "微软雅黑";
+            font-size: 22px;
+            color: #ffffff;
+        }
+
+        #username {
+            width: 100%;
+            height: 30px;
+            margin: 0px auto;
+            padding-left: 10px;
+            font-family: "微软雅黑";
+            font-size: 16px;
+            color: red;
+            display: none;
+        }
+
+        #pass {
+            width: 100%;
+            margin: 0px auto;
+            font-size: 16px;
+            color: black;
+            display: none;
+        }
+
+        #pass>div {
+            width: 100%;
+            height: 25px;
+            margin: 0 0 4px 0;
+            display: none;
+        }
+
+        #phone {
+            width: 100%;
+            height: 30px;
+            margin: 0px auto;
+            padding-left: 10px;
+            font-family: "微软雅黑";
+            font-size: 16px;
+            color: red;
+            display: none;
+        }
+
+        #footer1 {
+            width: 48%;
+            height: 20px;
+            margin: 10px 0 0 205px;
+            font-size: 0.85em;
+            color: #868686;
+        }
+
+        #footer2 {
+            width: 48%;
+            height: 20px;
+            margin: 40px 0 0 280px;
+            font-size: 0.85em;
+            color: #868686;
+        }
+
+        @media screen and (max-width:1100px) {
+            #left {
+                display: none;
+            }
+
+            body {
+                background-image: url("pic/t11.png");
+                background-repeat: no-repeat;
+                background-size: 150px 60px;
+                background-position-x: left;
+                background-attachment: fixed;
+            }
+
+            #right {
+                margin: 0 0 0 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="left">
+        <img src="pic/t8.jpg" id="pic">
+    </div>
+    <div id="qq"></div>
+    <div id="right">
+        <div id="banner">
+            <ul>
+                <li id="u1">简体中文
+                    <ul id="ul1">
+                        <li>繁體中文</li>
+                        <li>English</li>
+                    </ul>
+                </li>
+                <li>意见反馈</li>
+            </ul>
+        </div>
+        <div id="banner1">
+            <h1>欢迎注册QQ</h1>
+        </div>
+        <div id="banner2">
+            <h2>每一天，乐在沟通。</h2>
+        </div>
+        <div id="main">
+            <input type="text" value="昵称" id="txt1">
+            <div id="username"></div>
+            <input type="text" value="密码" id="txt2">
+            <div id="pass">
+                <div>不能包括空格</div>
+                <div>长度为8-16个字符</div>
+                <div>必须包含字母、数字符号中至少两种</div>
+            </div>
+            <div id="main1">
+                <select>
+                    <option selected>中国+86</option>
+                    <option>中国香港特别行政区+852</option>
+                    <option>中国澳门特别行政区+853</option>
+                    <option>中国台湾地区+886</option>
+                    <option>阿尔巴尼亚+355</option>
+                    <option>阿尔及利亚+213</option>
+                </select>
+            </div>
+            <div id="main2">
+                <input type="text" value="手机号码" id="txt3">
+                <div id="phone"></div>
+            </div>
+            <div id="main3">可通过该手机号找回密码</div>
+            <div id="main4">
+                <input type="text" value="短信验证码" id="txt4">
+                <input id="btn1" type="button" value="发送短信验证码">
+            </div>
+            <input id="btn" type="button" value="立即注册">
+
+        </div>
+        <div id="footer1"><input type="checkbox" value="" class="check" checked>我已阅读并同意相关服务条款和隐私政策</div>
+        <div id="footer2">Copyright © 1998-2021Tencent All Rights Reserved</div>
+    </div>
+</body>
+<script>
+    window.onload = init;
+    function init() {
+        var u1 = document.getElementById("u1");
+        u1.onmouseover = function () {
+            document.getElementById("ul1").style.display = "block";
+        }
+        u1.onmouseout = function () {
+            document.getElementById("ul1").style.display = "none";
+        }
+
+        var btn = document.getElementById("btn");
+        btn.onmouseover = function () {
+            btn.style.backgroundColor = "#2f7beb";
+        }
+
+        var txt1 = document.getElementById("txt1");
+        var username = document.getElementById("username");
+        txt1.onclick = function () {
+            this.value = "";
+            username.style.display = "none";
+        }
+        txt1.onblur = function () {
+            if (this.value.length == 0) {
+                this.value = "昵称";
+                username.style.display = "block";
+                username.innerHTML = "昵称不可以为空";
+            }
+        }
+
+        var txt2 = document.getElementById("txt2");
+        txt2.onclick = function () {
+            this.value = "";
+            document.getElementById("pass").style.display = "none";
+        }
+        txt2.onblur = function () {
+            psdvalue = this.value;
+            var psdbox = document.getElementById("pass");
+            var psdboxdiv = psdbox.getElementsByTagName("div");
+            var psdvaluelen = psdvalue.length;
+            if (psdvaluelen == 0) {
+                this.value = "密码";
+                psdbox.style.display = "block";
+                psdbox.innerHTML = "密码不能为空";
+                psdbox.style.color = "red";
+            }
+            else {
+                psdbox.style.display = "block";
+                psdboxdiv[0].style.display = "block";
+                psdboxdiv[1].style.display = "block";
+                psdboxdiv[2].style.display = "block";
+                if (psdvaluelen >= 8 && psdvaluelen <= 16) {
+                    psdboxdiv[1].style.color = "green";
+                } else {
+                    psdboxdiv[1].style.color = "red";
+                }
+
+                var bool = true;
+                var arr = new Array();
+                arr = txt2.value.split(" ");
+                if (arr.length != 1) {
+                    bool = false;
+                }
+                if (bool) {
+                    psdboxdiv[0].style.color = "green";
+                } else {
+                    psdboxdiv[0].style.color = "red";
+                }
+
+                var j = 1;
+                var k = 1;
+                var l = 1;
+                var b;
+                var i = /[0-9]/;
+                var str = /[A-Za-z]/;
+                var spec = /[,.<>{}~!@#$%^&*]/;
+                if (!(str.test(txt2.value))) {
+                    j = 0;
+                }
+                if (!(i.test(txt2.value))) {
+                    k = 0;
+                }
+                if (!(spec.test(txt2.value))) {
+                    l = 0;
+                }
+                b = j + k + l;
+                if (b >= 2) {
+                    psdboxdiv[2].style.color = "green";
+                } else {
+                    psdboxdiv[2].style.color = "red";
+                }
+
+            }
+
+
+        }
+        var txt3 = document.getElementById("txt3");
+        var txt4 = document.getElementById("txt4");
+        var phone = document.getElementById("phone");
+        var btn1 = document.getElementById("btn1");
+        txt3.onclick = function () {
+            this.value = "";
+            phone.style.display = "none";
+            document.getElementById("main4").style.display = "block";
+            txt4.style.display = "block";
+            btn1.style.display = "block";
+        }
+        txt3.onblur = function () {
+            if (this.value.length == 0) {
+                this.value = "手机号码";
+                phone.style.display = "block";
+                document.getElementById("main4").style.display = "none";
+            }
+        }
+        
+        var thisAd = 0;
+        var arr = ["pic/t8.jpg", "pic/t9.jpg", "pic/t10.jpg"];
+        setInterval(fun_go, 1000);
+        function fun_go() {
+            if (thisAd == arr.length) {
+                thisAd = 0;
+            }
+            document.getElementById("pic").src=arr[thisAd];
+            thisAd++
+        }
+
+    }
+
+   
+
+
+</script>
+
+</html>

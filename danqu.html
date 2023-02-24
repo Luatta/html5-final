@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单曲</title>
+    <style>
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+        }
+
+        #banner {
+            width: 100%;
+            height: 90px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #ul1 {
+            width: 100%;
+            height: 90px;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-size: 1.1em;
+            line-height: 90px;
+            text-align: center;
+        }
+
+        #ul1 li {
+            float: left;
+            padding: 0px;
+            color: black;
+        }
+
+        #ul1>li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #ul1>:nth-child(2):hover,
+        #ul1>:nth-child(11):hover {
+            color: rgb(255, 255, 255);
+        }
+
+        #ul12>:nth-child(1):hover {
+            color: black;
+        }
+
+        #ul11 li:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(55, 190, 127);
+        }
+
+        #ul1>:nth-child(1) {
+            width: 240px;
+            height: 90px;
+            background-image: url("pic/logo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 80px;
+        }
+
+        #ul1>:nth-child(2) {
+            width: 90px;
+            height: 90px;
+            background-color: rgb(55, 190, 127);
+            color: white;
+        }
+
+        #ul1>:nth-child(3) {
+            width: 100px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(4) {
+            width: 100px;
+            height: 30px;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 1.1em;
+        }
+
+        #ul1>:nth-child(5) {
+            width: 95px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(6) {
+            width: 70px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(7) {
+            width: 30px;
+            height: 30px;
+            margin: 32px 15px 0 12%;
+        }
+
+        #ul1>:nth-child(8) {
+            width: 65px;
+            height: 90px;
+            position: relative;
+            top: 0px;
+            right: 0%;
+        }
+
+        #ul1>:nth-child(9) {
+            width: 110px;
+            height: 40px;
+            margin-top: 26px;
+            margin-left: 0px;
+            border-radius: 3px;
+            color: rgb(255, 255, 255);
+            font-size: 0.78em;
+            line-height: 40px;
+            position: relative;
+            top: 0px;
+            right: 0%;
+            background-color: rgb(56, 201, 133)
+        }
+
+        #ul1>:nth-child(7)>ul {
+            width: 100%;
+            height: 40px;
+            margin: 27px 0 0 0;
+            padding: 0px;
+            list-style: none;
+        }
+
+        #txt {
+            display: block;
+            width: 200px;
+            height: 36px;
+            margin: 0px;
+            position: absolute;
+            top: 35px;
+            left: 58%;
+            font-size: 0.75em;
+            color: rgb(190, 190, 190);
+            background-color: white;
+            border: 1px solid rgb(194, 194, 194);
+            border-radius: 2px;
+            background-image: url("pic/fu2.png");
+            background-size: 20% 100%;
+            background-position-x: right;
+            background-position-y: center;
+            background-repeat: no-repeat;
+        }
+
+        #ul11 {
+            display: none;
+            list-style: none;
+            width: 120px;
+            height: 80px;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        #ul11 li {
+            width: 90%;
+            height: 40px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 0.9em;
+            background-color: white;
+            border: 1px solid rgb(212, 212, 212);
+        }
+
+        #ul12 {
+            display: none;
+            width: 160px;
+            height: 150px;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+            border: 0.4px solid rgba(207, 207, 207, 0.678);
+            border-radius: 5px;
+            position: relative;
+            top: 10px;
+            left: 17%;
+            z-index: 1;
+            list-style: none;
+        }
+
+        #ul12>:nth-child(1) {
+            width: 100%;
+            height: 80px;
+            margin-top: 0px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 0.7em;
+            color: rgb(0, 0, 0);
+
+        }
+
+        input.btn2 {
+            width: 140px;
+            height: 28px;
+            margin-top: 32px;
+            margin-left: 10px;
+            background-color: rgb(56, 201, 133);
+            font-size: 0.8em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+        #list {
+            width: 100%;
+            height: 45px;
+            border-top: 1px solid rgb(228, 228, 228);
+        }
+
+        #list ul {
+            width: 75%;
+            height: 45px;
+            margin-top: 0px;
+            margin-left: 22%;
+            padding: 0px;
+            list-style: none;
+            font-size: 1em;
+            line-height: 45px;
+            text-align: center;
+        }
+
+        #list ul li {
+            float: left;
+            padding: 0px 22px;
+        }
+
+        #list ul li a:link,
+        #list ul li a:visited {
+            color: black;
+        }
+
+        #list ul li a:hover,
+        #list ul li a:active {
+            color: rgb(55, 190, 127);
+        }
+
+        #kuang1 {
+            width: 175px;
+            height: 130px;
+            position: fixed;
+            top: 170px;
+            left: 81%;
+            background-color: white;
+            border: 3px solid rgba(202, 202, 202, 0.171);
+            border-radius: 3%;
+            z-index: 1;
+        }
+
+        #kuang1 ul {
+            width: 100%;
+            height: 130px;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #kuang1>ul>:nth-child(1) {
+            margin-top: 7px;
+            margin-left: 10%;
+            width: 80%;
+            height: 42px;
+            background-image: url("pic/logo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 40px;
+        }
+
+        #kuang1>ul>:nth-child(2) {
+            margin-top: 7px;
+            margin-left: 6%;
+            width: 90%;
+            height: 25px;
+            font-size: 1.05em;
+            color: rgb(168, 168, 168);
+        }
+
+        #kuang1>ul>:nth-child(3) {
+            margin-top: 7px;
+            margin-left: 8%;
+            width: 83%;
+            height: 33px;
+            font-size: 1.05em;
+            color: rgb(168, 168, 168);
+        }
+
+        input.btn1 {
+            width: 100%;
+            height: 33px;
+            background-color: rgb(56, 201, 133);
+            font-size: 1.05em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+        #kuang2 {
+            width: 55px;
+            height: 140px;
+            position: fixed;
+            top: 350px;
+            left: 92%;
+            z-index: 1;
+        }
+
+        #kuang2 ul {
+            width: 100%;
+            height: 130px;
+            list-style: none;
+            margin-left: 12%;
+            margin-top: 0px;
+            padding: 0px;
+        }
+
+        #kuang2 ul li {
+            width: 70%;
+            height: 38px;
+            list-style: none;
+            margin-top: 3px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(201, 201, 201);
+            text-align: center;
+            line-height: 38px;
+            font-size: 0.95em;
+        }
+
+        #kuang2>ul>:nth-child(3) {
+            background-image: url("pic/fu1.jpg");
+            background-size: 100% 38px;
+            background-repeat: no-repeat;
+        }
+
+        #content1 {
+            width: 100%;
+            height: 300px;
+        }
+
+        #con1 {
+            width: 30%;
+            height: 300px;
+            float: left;
+        }
+
+        #con1>:nth-child(1) {
+            width: 250px;
+            height: 250px;
+            position: relative;
+            top: 30px;
+            left: 50px;
+            background-image: url("pic/t1.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con2 {
+            width: 70%;
+            height: 320px;
+            float: left;
+        }
+
+        #con2>:nth-child(1) {
+            width: 100%;
+            height: 50px;
+            margin-top: 45px;
+            font-size: 1.85em;
+        }
+
+        #con2>:nth-child(2) {
+            width: 100%;
+            height: 30px;
+            margin: 0px;
+            font-size: 0.9em;
+        }
+
+        #con2>:nth-child(2):hover,
+        #con2>:nth-child(3)>:nth-child(1):hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #con2>:nth-child(3) {
+            width: 100%;
+            height: 30px;
+            margin: 0px;
+            font-size: 1em;
+        }
+
+        #con2>:nth-child(3)>:nth-child(1) {
+            width: 50%;
+            height: 30px;
+            float: left;
+        }
+
+        #con2>:nth-child(3)>:nth-child(2) {
+            width: 50%;
+            height: 30px;
+            float: left;
+        }
+
+        #con2>:nth-child(4) {
+            width: 100%;
+            height: 30px;
+            margin: 0px;
+            font-size: 1em;
+        }
+
+        #con2>:nth-child(4)>:nth-child(1) {
+            width: 50%;
+            height: 30px;
+            float: left;
+        }
+
+        #con2>:nth-child(4)>:nth-child(2) {
+            width: 50%;
+            height: 30px;
+            float: left;
+        }
+
+        #con2>:nth-child(5) {
+            width: 100%;
+            height: 30px;
+            margin: 0px;
+            font-size: 1em;
+        }
+
+        #con2>:nth-child(6) {
+            width: 100%;
+            height: 40px;
+            margin-top: 8px;
+            font-size: 1em;
+            text-indent: 2%;
+        }
+
+        #con2>:nth-child(6)>ul {
+            list-style: none;
+            float: left;
+            width: 70%;
+            height: 40px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #con2>:nth-child(6)>ul>li {
+            float: left;
+            width: 22%;
+            height: 40px;
+            background-color: rgb(255, 255, 255);
+            border: 0.5px solid rgb(209, 209, 209);
+            text-align: center;
+            line-height: 40px;
+            font-size: 0.9em;
+            color: rgb(31, 31, 31);
+            margin: 0px 5px;
+        }
+
+        #con2>:nth-child(6)>ul>:nth-child(1) {
+            background-color: rgb(56, 201, 133);
+            color: white;
+            margin: 0;
+        }
+
+        #con2>:nth-child(6)>ul>li:hover {
+            background-color: rgb(224, 224, 224);
+        }
+
+        #con2>:nth-child(6)>ul>:nth-child(1):hover {
+            background-color: rgb(58, 185, 126);
+        }
+
+        #con3 {
+            width: 100%;
+            height: 1100px;
+            float: left;
+        }
+
+        #con31 {
+            width: 69%;
+            height: 100%;
+            float: left;
+        }
+
+        #con32 {
+            width: 31%;
+            height: 100%;
+            float: left;
+        }
+
+        #con31>:nth-child(1) {
+            width: 100%;
+            height: 40px;
+            font-size: 1.25em;
+            text-indent: 6.5%;
+            line-height: 40px;
+        }
+
+        #con31>:nth-child(2) {
+            width: 90%;
+            height: 400px;
+            margin: 0px 6.5%;
+        }
+
+        #con31>:nth-child(2)>p {
+            width: 100%;
+            height: 24px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 0.82em;
+        }
+
+        #con31>:nth-child(2)>:nth-child(3),
+        #con31>:nth-child(2)>:nth-child(9),
+        #con31>:nth-child(2)>:nth-child(12) {
+            width: 100%;
+            height: 45px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 0.82em;
+            line-height: 20px;
+        }
+
+        #show>p {
+            width: 100%;
+            height: 24px;
+            margin: 0px;
+            padding-top: 5px;
+            font-size: 0.82em;
+        }
+
+        #show>:nth-child(1) {
+            width: 100%;
+            height: 60px;
+            margin: 0px;
+            padding-top: 0px;
+            font-size: 0.82em;
+            line-height: 20px;
+        }
+
+        .btn-slide {
+            text-align: center;
+            width: 55px;
+            height: 20px;
+            padding: 0px;
+            margin: 0px;
+            font-size: 0.82em;
+            line-height: 20px;
+            display: block;
+            color: rgb(56, 201, 133);
+            text-decoration: none;
+        }
+
+        #con311 {
+            width: 100%;
+            height: 680px;
+            margin-top: 20px;
+
+        }
+
+        #con311>:nth-child(1) {
+            width: 100%;
+            height: 40px;
+            font-size: 1.55em;
+            text-indent: 6.5%;
+            line-height: 40px;
+        }
+
+        #txt2 {
+            width: 80%;
+            height: 10px;
+            padding: 5px 10% 120px 0px;
+            margin: 1px 0 0 6.5%;
+            font-size: 1em;
+            background-color: whitesmoke;
+            color: rgb(51, 51, 51);
+            border-radius: 3px;
+            border: 1px solid rgb(221, 220, 220);
+        }
+
+        .btn3:hover,
+        .btn2:hover,
+        .btn1:hover {
+            background-color: rgb(54, 179, 121);
+        }
+
+        #con311>:nth-child(3) {
+            width: 11%;
+            height: 27px;
+            font-size: 0.95em;
+            margin: 8px 0 0 85.6%;
+            text-align: center;
+            line-height: 27px;
+            border-radius: 3px;
+            color: white;
+            background-color: rgb(56, 201, 133);
+        }
+
+        #con311>:nth-child(4) {
+            width: 90.5%;
+            height: 45px;
+            font-size: 1.1em;
+            margin: 12px 0 0 6.5%;
+            line-height: 40px;
+            border-bottom: 0.8px solid rgb(231, 231, 231);
+        }
+
+        #con311>:nth-child(5) {
+            width: 90.5%;
+            height: 220px;
+            font-size: 1.1em;
+            margin: 12px 0 0 6.5%;
+            line-height: 40px;
+            border-bottom: 0.8px solid rgb(231, 231, 231);
+        }
+
+        #con3111>:nth-child(1) {
+            width: 7%;
+            height: 43px;
+            background-image: url("pic/tx1.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 43px;
+            border-radius: 50%;
+            float: left;
+        }
+
+        #con3111>:nth-child(3) {
+            width: 7%;
+            height: 43px;
+
+            margin-top: 10px;
+            background-image: url("pic/tx2.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 43px;
+            border-radius: 50%;
+            float: left;
+        }
+
+        #con3111>:nth-child(2) {
+            width: 91%;
+            height: 220px;
+            margin-left: 10px;
+            float: left;
+        }
+
+        #con3111>:nth-child(4) {
+            width: 91%;
+            height: 220px;
+            margin-left: 10px;
+            margin-top: 10px;
+            float: left;
+        }
+
+        #con3111>:nth-child(2)>p,
+        #con3111>:nth-child(4)>p {
+            width: 91%;
+            height: 30px;
+            margin: 5px 0px;
+            font-size: 0.9em;
+            color: black;
+        }
+
+        #con3111>:nth-child(2)>:nth-child(1),
+        #con3111>:nth-child(2)>:nth-child(2),
+        #con3111>:nth-child(4)>:nth-child(1),
+        #con3111>:nth-child(4)>:nth-child(2) {
+            width: 91%;
+            height: 30px;
+            margin: 3px 0px;
+            font-size: 0.85em;
+            color: rgb(109, 109, 109);
+        }
+
+        #con31111,
+        #con31112 {
+            width: 100%;
+            height: 40px;
+        }
+
+        #con31111>:nth-child(1) {
+            width: 4.5%;
+            height: 25px;
+            float: left;
+            margin: 6px 0;
+            background-image: url("pic/t2.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con31112>:nth-child(1) {
+            width: 4.5%;
+            height: 25px;
+            float: left;
+            margin: 6px 0;
+            background-image: url("pic/t2.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con31111>:nth-child(2),
+        #con31111>:nth-child(3) {
+            width: 10%;
+            height: 40px;
+            text-align: center;
+            font-size: 0.88em;
+            color: rgb(109, 109, 109);
+            float: left;
+        }
+
+        #con31111>:nth-child(2):hover,
+        #con31111>:nth-child(3):hover {
+            color: rgb(56, 201, 133);
+        }
+
+        #con31111>:nth-child(3) {
+            display: none;
+        }
+
+        #con31112>:nth-child(2),
+        #con31112>:nth-child(3) {
+            width: 10%;
+            height: 40px;
+            text-align: center;
+            font-size: 0.88em;
+            color: rgb(109, 109, 109);
+            float: left;
+        }
+
+        #con31112>:nth-child(2):hover,
+        #con31112>:nth-child(3):hover {
+            color: rgb(56, 201, 133);
+        }
+
+        #con31112>:nth-child(3) {
+            display: none;
+        }
+
+        #con32>:nth-child(1) {
+            width: 100%;
+            height: 40px;
+            font-size: 1.25em;
+            line-height: 40px;
+        }
+
+        #con32>:nth-child(2)>p {
+            width: 100%;
+            height: 20px;
+            margin: 0px;
+            padding-top: 4px;
+            font-size: 0.82em;
+        }
+
+        #con32>:nth-child(3),
+        #con32>:nth-child(7) {
+            width: 100%;
+            height: 40px;
+            font-size: 1.25em;
+            line-height: 40px;
+            margin-top: 25px;
+        }
+
+        #con32>:nth-child(4) {
+            width: 100%;
+            height: 100px;
+            background-image: url("pic/t3.jpg");
+            background-size: 100px 100px;
+            background-repeat: no-repeat;
+        }
+
+        #con32>:nth-child(5) {
+            width: 30%;
+            height: 42px;
+            font-size: 0.82em;
+            line-height: 20px;
+            margin-top: 10px;
+        }
+
+        #con32>:nth-child(5):hover,
+        #con32>:nth-child(9):hover,
+        #con32>:nth-child(10):hover {
+            color: rgb(56, 201, 133);
+        }
+
+        #con32>:nth-child(6) {
+            width: 30%;
+            height: 20px;
+            font-size: 0.82em;
+            line-height: 15px;
+            margin: 0px;
+            color: rgb(173, 173, 173);
+        }
+
+        #con32>:nth-child(8) {
+            width: 270px;
+            height: 150px;
+            background-color: blanchedalmond;
+            background-image: url("pic/t4.jpg");
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+            background-size: 270px 150px;
+        }
+
+        #con32>:nth-child(8)>:nth-child(1) {
+            display: none;
+            width: 20%;
+            height: 50px;
+            position: relative;
+            top: 52px;
+            left: 110px;
+            background-image: url("pic/t5.jpg");
+            background-size: 40px 40px;
+            background-position-x: center;
+            background-position-y: center;
+            border-radius: 50%;
+        }
+
+        #con32>:nth-child(9) {
+            width: 250px;
+            height: 18px;
+            font-size: 0.82em;
+            line-height: 20px;
+            text-indent: 5px;
+            margin: 0px;
+            padding: 5px 0;
+            color: rgb(0, 0, 0);
+        }
+
+        #con32>:nth-child(10) {
+            width: 250px;
+            height: 20px;
+            font-size: 0.82em;
+            line-height: 15px;
+            text-indent: 5px;
+            margin: 0px;
+            color: rgb(173, 173, 173);
+        }
+
+        #bottom {
+            width: 100%;
+            height: 100px;
+            margin: 1200px 0 0 0;
+            background-color: #515151;
+        }
+
+        #bottom>div:nth-child(1) ul {
+            width: 100%;
+            height: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 20px 0 0 0;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(1) {
+            float: left;
+            width: 5%;
+            height: 20px;
+            line-height: 20px;
+            margin: 0 0 0 18%;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(5),
+        #bottom>div:nth-child(1) ul li:nth-child(9),
+        #bottom>div:nth-child(1) ul li:nth-child(11),
+        #bottom>div:nth-child(1) ul li:nth-child(13),
+        #bottom>div:nth-child(1) ul li:nth-child(15),
+        #bottom>div:nth-child(1) ul li:nth-child(17),
+        #bottom>div:nth-child(1) ul li:nth-child(19) {
+            float: left;
+            width: 5%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(7),
+        #bottom>div:nth-child(1) ul li:nth-child(3) {
+            float: left;
+            width: 8%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(1):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(7):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(3):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(5):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(9):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(11):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(13):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(15):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(17):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(19):hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(2),
+        #bottom>div:nth-child(1) ul li:nth-child(4),
+        #bottom>div:nth-child(1) ul li:nth-child(6),
+        #bottom>div:nth-child(1) ul li:nth-child(8),
+        #bottom>div:nth-child(1) ul li:nth-child(10),
+        #bottom>div:nth-child(1) ul li:nth-child(12),
+        #bottom>div:nth-child(1) ul li:nth-child(14),
+        #bottom>div:nth-child(1) ul li:nth-child(16),
+        #bottom>div:nth-child(1) ul li:nth-child(18) {
+            float: left;
+            width: 0.5%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(2) {
+            width: 100%;
+            height: 20px;
+            margin: 0;
+            padding-top: 5px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(3) {
+            width: 100%;
+            height: 20px;
+            margin: 0;
+            padding-top: 6px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        @media screen and (min-width:1200px) {
+
+            #ul1>:nth-child(8) {
+                width: 65px;
+                height: 90px;
+                position: relative;
+                top: 0px;
+                left: 3%;
+            }
+
+            #ul1>:nth-child(9) {
+                width: 110px;
+                height: 40px;
+                margin-top: 26px;
+                margin-left: 0px;
+                background-color: rgb(56, 201, 133);
+                border-radius: 3px;
+                color: rgb(255, 255, 255);
+                font-size: 0.78em;
+                line-height: 40px;
+                position: relative;
+                top: 0px;
+                left: 3%;
+            }
+        }
+
+        @media screen and (max-width:1160px) {
+            #txt {
+                display: none;
+            }
+
+            #ul1>:nth-child(7) {
+                width: 38px;
+                height: 37px;
+                position: relative;
+                top: 26px;
+                left: 0;
+                background-color: rgb(255, 255, 255);
+                margin: 0px;
+                background-image: url("pic/fu2.png");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                border: 1px solid rgb(194, 194, 194);
+                border-radius: 2px;
+            }
+        }
+
+        @media screen and (max-width:1040px) {
+
+            #con2,
+            #list {
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <ul id="ul1">
+            <li></li>
+            <li>音乐馆</li>
+            <li>我的音乐</li>
+            <li id="u1">客户端
+                <ul id="ul12">
+                    <li>
+                        <p>HQ高品质 全员开启</p>
+                        <p>独家音效 全面升级</p>
+                        <p>轻盈视觉 动态皮肤</p>
+                    </li>
+                    <li><input type="button" value="下载体验" class="btn2"></li>
+                </ul>
+            </li>
+            <li>开放平台</li>
+            <li>VIP</li>
+            <li id="txt1">
+                <ul>
+                    <li><input type="text" id="txt" value="搜索音乐、MV、歌单、用户"></li>
+                </ul>
+            </li>
+            <li>登录</li>
+            <li id="u2">开通VIP
+                <ul id="ul11">
+                    <li>开通绿钻豪华版</li>
+                    <li>开通付费包</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <div id="list">
+        <ul>
+            <li><a href="shouye.html">首页</a></li>
+            <li><a href="geshou.html">歌手</a></li>
+            <li>新碟</li>
+            <li>排行榜</li>
+            <li>分类歌单</li>
+            <li>电台</li>
+            <li>MV</li>
+            <li><a href="album.html">数字专辑</a></li>
+            <li>票务</li>
+        </ul>
+    </div>
+    <div id="kuang1">
+        <ul>
+            <li></li>
+            <li>千万高品质曲库尽享</li>
+            <li><input type="button" value="客户端下载" class="btn1"></li>
+        </ul>
+    </div>
+    <div id="kuang2">
+        <ul>
+            <li><a href="#banner">︿</a></li>
+            <li>反馈</li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="content1">
+        <div id="con1">
+            <div></div>
+        </div>
+        <div id="con2">
+            <div>味 (Hot Sauce) (맛)</div>
+            <div>NCT DREAM (엔시티 드림)</div>
+            <div>
+                <div>专辑：Hot Sauce - The 1st Album</div>
+                <div>语种： 韩语</div>
+            </div>
+            <div>
+                <div>流派： Rap/Hip Hop</div>
+                <div>唱片公司：SM Entertainment</div>
+            </div>
+            <div>发行时间：2021-05-10</div>
+            <div>
+                <ul>
+                    <li>播放</li>
+                    <li>收藏</li>
+                    <li>评论</li>
+                    <li>更多</li>
+                </ul>
+            </div>
+        </div>
+        <div id="con3">
+            <div id="con31">
+                <div>歌词</div>
+                <div id="con312">
+                    <p>味 (Hot Sauce) (맛) - NCT DREAM (엔시티 드림)</p>
+                    <p>词：문여름 (JamFactory)(Mun, Yeo Reum)/조윤경 (Cho, Yun Kyoung)</p>
+                    <p>曲：Martin Wave/Tinashe Sibanda/Philip Kembo/Rosina "Soaky Siren” Russell/John Mitchell/Ninos
+                        Hanna/YOO YOUNG JIN</p>
+                    <p>编曲：Martin Wave/Bantu/Dr. Chaii/YOO YOUNG JIN</p>
+                    <p>Vocal Directed by：KENZIE/YOO YOUNG JIN</p>
+                    <p>Background Vocals by：NCT 해찬/NCT 런쥔/JUNNY</p>
+                    <p>Recorded by：노민지 @ SM Yellow Tail Studio/YOO YOUNG JIN @ SM BOOMINGSYSTEM</p>
+                    <p>Digital Editing by：정유라/YOO YOUNG JIN @ SM BOOMINGSYSTEM</p>
+                    <p>Engineered for Mix by：노민지 @ SM Yellow Tail Studio/YOO YOUNG JIN @ SM BOOMINGSYSTEM/강은지 @ SM SSAM
+                        Studio</p>
+                    <p>Mixed by：정의석 @ SM Blue Cup Studio</p>
+                    <p>Original Title：Calamari</p>
+                    <p>Original Writers：Johnny Yukon (John Mitchelle) / Soaky Siren (Rosina Russell) / T-Collar (Tinashe
+                        Sibanda) / Pip Kembo (Philip Kembo)/Martin Wave</p>
+                    <div id="show" style="display:none;">
+                        <p>Original Publishers：Artist 101 Publishing Group / Prescription Songs LLC / Where Da Kasz At /
+                            Artist 101Publishing Group administered by Kobalt Music Publishing Ltd (KMP)/SILO
+                            Music/Ultra Empire
+                            Music(BMI)/Ultra Music Publishing Europe AG (SUISA)
+                        </p>
+                        <p>Sub-Publisher：Music Cube,Inc.</p>
+                        <p>Hot sauce 깊이 dip that eh 날 따라 넌 twist that eh</p>
+                        <p>Hot sauce 타오를 때 ooh 입맛대로 골라 ma dish</p>
+                        <p>넌 뭐가 궁금해 나는 너만의 chef</p>
+                        <p>이건 너를 위한 plate yeah</p>
+                        <p>내가 맛 보여 줄게</p>
+                        <p>시간은 충분해 지금 우리</p>
+                        <p>눈치도 보지 마 그저 taste it</p>
+                        <p>내 비법은 색다른 spicy</p>
+                        <p>살짝만 스쳐도 정신없지</p>
+                        <p>설탕이 발린 맛엔 이내 질리기 쉬워</p>
+                        <p>뜨거운 나의 feelin' 지금 느꼈지 넌</p>
+                        <p>너와 내 사이</p>
+                        <p>선명히 보인 커져만 가는 열기</p>
+                        <p>난 오감을 깨워</p>
+                        <p>네 맘을 깨워 터질 것만 같은 ma skill</p>
+                        <p>골라 ma dish</p>
+                        <p>골라 ma dish</p>
+                        <p>골라 ma dish</p>
+                        <p>Hot sauce 깊이 dip that eh 날 따라 넌 twist that eh</p>
+                        <p>Hot sauce 타오를 때 ooh 입맛대로 골라 ma dish</p>
+                        <p>아예 방심 하지마 uh</p>
+                        <p>빈틈이 없을 테니까</p>
+                        <p>Yeah 넌 자극적인 내 감각 ooh</p>
+                        <p>가능하겠니 감당 nope</p>
+                        <p>Yeah yeah 버틸 턱이 없잖아 nah</p>
+                        <p>긴장을 더 풀고서 넌 bon appétit now that's right</p>
+                        <p>주체 못 해 자꾸 빠져드는 맛</p>
+                        <p>Cuz you can't stop 난 끝까지 get ya</p>
+                        <p>찾게 될 걸 every day and every night</p>
+                        <p>중독돼 이미 넌</p>
+                        <p>네 맘을 더 섞어놔 이젠 남김없이</p>
+                        <p>계속 원하게 돼</p>
+                        <p>어지런 머리</p>
+                        <p>네 두 손발이 이끌려 내게 이미</p>
+                        <p>좀 더 자극적일</p>
+                        <p>매 순간들이 강렬해 what we gon' eat</p>
+                        <p>골라 ma dish</p>
+                        <p>I'm the one what you want what you want</p>
+                        <p>What you want ah ya</p>
+                        <p>골라 ma dish</p>
+                        <p>I'm the one what you want what you want</p>
+                        <p>What you want ah ya</p>
+                        <p>골라 ma dish</p>
+                        <p>Hot sauce 깊이 dip that eh 날 따라 넌 twist that eh</p>
+                        <p>Hot sauce 타오를 때 ooh 입맛대로 골라 ma dish</p>
+                        <p>너를 삼켜버린 feelin'</p>
+                        <p>사로잡은 이런 끌림</p>
+                        <p>뗄 수가 없잖아 좀 더 깊이 빠져들 때</p>
+                        <p>원해 원해 원해봐 더 babe</p>
+                        <p>얼마든지 더 바래 바래 babe</p>
+                        <p>너의 혀끝 위로 아른거릴</p>
+                        <p>완벽해진 맛을 즐겨</p>
+                        <p>You want it babe</p>
+                        <p>I'm the one what you want what you want</p>
+                        <p>What you want ah ya</p>
+                        <p>골라 ma dish</p>
+                        <p>I'm the one what you want what you want</p>
+                        <p>What you want ah ya</p>
+                        <p>골라 ma dish</p>
+                        <p>Hot sauce 깊이 dip that eh 날 따라 넌 twist that eh</p>
+                        <p>Hot sauce 타오를 때 ooh 입맛대로 골라 ma dish</p>
+                    </div>
+                    <div class="slide">
+                        <a href="javascript:showdiv();" id="strHref" class="btn-slide">[ 展开 ]
+                        </a>
+                    </div>
+                </div>
+                <div id="con311">
+                    <div>评论</div>
+                    <div><input type="text" id="txt2" value="说说你的看法吧"></div>
+                    <div>发表评论</div>
+                    <div>精彩评论</div>
+                    <div id="con3111">
+                        <div></div>
+                        <div id="con311111">
+                            <p>Blakah.</p>
+                            <p>5月10日 17:00</p>
+                            <p>史上最年轻的百万男团回归啦 预售171万 太棒了！</p>
+                            <p>大家一起 yo dream！！！</p>
+                            <p>快去切瓜去！！！！💚💚💚💚💚💚💚</p>
+                            <div id="con31111">
+                                <div></div>
+                                <div>回复</div>
+                                <div id="jb">举报</div>
+                            </div>
+                        </div>
+                        <div></div>
+                        <div id="con311112">
+                            <p>Do Young.</p>
+                            <p>5月10日 17:00</p>
+                            <p>钟辰乐NCT有你了不起!!!!</p>
+                            <div id="con31112">
+                                <div></div>
+                                <div>回复</div>
+                                <div id="jb2">举报</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+
+            </div>
+            <div id="con32">
+                <div>简介</div>
+                <div>
+                    <p>主打歌《味 (Hot Sauce)》是一首加入了</p>
+                    <p>Afrobeat元素的嘻哈歌曲，与个性十足的嗓音</p>
+                    <p>相互调和的副歌Chanting和满满Chill氛围的极</p>
+                    <p>简音轨形成的对比极为突出，并由仿佛在念咒</p>
+                </div>
+                <div>相关热门歌单</div>
+                <div></div>
+                <div>每月KPOP | 2021年5月</div>
+                <div>K-POP小编</div>
+                <div>相关MV</div>
+                <div id="t5">
+                    <div id="bf"></div>
+                </div>
+                <div>NCT DREAM《味 (Hot Sauce)》MV</div>
+                <div>NCT DREAM</div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div>
+            <ul>
+                <li>关于腾讯</li>
+                <li>|</li>
+                <li>About Tencent</li>
+                <li>|</li>
+                <li>服务条款</li>
+                <li>|</li>
+                <li>用户服务协议</li>
+                <li>|</li>
+                <li>隐私政策</li>
+                <li>|</li>
+                <li>权利声明</li>
+                <li>|</li>
+                <li>广告服务</li>
+                <li>|</li>
+                <li>腾讯招聘</li>
+                <li>|</li>
+                <li>客服中心</li>
+                <li>|</li>
+                <li>网站导航</li>
+            </ul>
+        </div>
+        <div>Copyright © 1998 - 2021 Tencent. All Rights Reserved.</div>
+        <div>腾讯公司 版权所有 网络文化经营许可证：粤网文[2018]6725-2386号</div>
+    </div>
+</body>
+
+<script>
+    function showdiv() {
+        document.getElementById("show").style.display = "block";
+        document.getElementById("show").style.height = "1860px";
+        document.getElementById("con312").style.height = "2260px";
+        document.getElementById("bottom").style.margin = "3100px 0 0 0";
+        document.getElementById('strHref').innerHTML = "[收起]";
+        document.getElementById('strHref').href = "javascript:hidediv();";
+    }
+    function hidediv() {
+        document.getElementById('show').style.display = 'none';
+        document.getElementById("bottom").style.margin = "1200px 0 0 0";
+        document.getElementById('strHref').innerHTML = "[展开]";
+        document.getElementById('strHref').href = "javascript:showdiv();";
+        document.getElementById("con312").style.height = "400px";
+    }
+    window.onload = init;
+    function init() {
+        var txt=document.getElementById("txt");
+        txt.onmouseover=function(){
+            txt.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt.onmouseout=function(){
+            txt.style.backgroundImage="url('pic/fu2.png')";
+        }
+
+        var txt1=document.getElementById("txt1");
+        txt1.onmouseover=function(){
+            txt1.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt1.onmouseout=function(){
+            txt1.style.backgroundImage="url('pic/fu2.png')";
+        }
+
+        var con311111 = document.getElementById("con311111");
+        con311111.onmouseover = function () {
+            document.getElementById("jb").style.display = "block";
+        }
+        con311111.onmouseout = function () {
+            document.getElementById("jb").style.display = "none";
+        }
+
+        var con311112 = document.getElementById("con311112");
+        con311112.onmouseover = function () {
+            document.getElementById("jb2").style.display = "block";
+        }
+        con311112.onmouseout = function () {
+            document.getElementById("jb2").style.display = "none";
+        }
+
+        var u1 = document.getElementById("u1");
+        u1.onmouseover = function () {
+            document.getElementById("ul12").style.display = "block";
+        }
+        u1.onmouseout = function () {
+            document.getElementById("ul12").style.display = "none";
+        }
+
+        var u2 = document.getElementById("u2");
+        u2.onmouseover = function () {
+            document.getElementById("ul11").style.display = "block";
+        }
+        u2.onmouseout = function () {
+            document.getElementById("ul11").style.display = "none";
+        }
+
+        var t5 = document.getElementById("t5");
+        t5.onmouseover = function () {
+            document.getElementById("bf").style.display = "block";
+            document.getElementById("t5").style.backgroundSize = "103% 103%";
+        }
+        t5.onmouseout = function () {
+            document.getElementById("bf").style.display = "none";
+            document.getElementById("t5").style.backgroundSize = "270px 150px";
+        }
+
+        document.getElementById("txt2").onclick = function () {
+            this.value = "";
+            this.type = "text";
+        }
+        document.getElementById("txt2").onblur = function () {
+            this.value = "说说你的看法吧";
+            this.type = "text";
+        }
+    }
+</script>
+
+</html>

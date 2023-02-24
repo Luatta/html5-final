@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字专辑</title>
+    <style>
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+        }
+
+        #banner {
+            width: 100%;
+            height: 90px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #ul1 {
+            width: 100%;
+            height: 90px;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-size: 1.1em;
+            line-height: 90px;
+            text-align: center;
+        }
+
+        #ul1 li {
+            float: left;
+            padding: 0px;
+            color: black;
+        }
+
+        #ul1>li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #ul1>:nth-child(2):hover,
+        #ul1>:nth-child(11):hover {
+            color: rgb(255, 255, 255);
+        }
+
+        #ul12>:nth-child(1):hover {
+            color: black;
+        }
+
+        #ul11 li:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(55, 190, 127);
+        }
+
+        #ul1>:nth-child(1) {
+            width: 240px;
+            height: 90px;
+            background-image: url("pic/logo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 80px;
+        }
+
+        #ul1>:nth-child(2) {
+            width: 90px;
+            height: 90px;
+            background-color: rgb(55, 190, 127);
+            color: white;
+        }
+
+        #ul1>:nth-child(3) {
+            width: 100px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(4) {
+            width: 100px;
+            height: 30px;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 1.1em;
+        }
+
+        #ul1>:nth-child(5) {
+            width: 95px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(6) {
+            width: 70px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(7) {
+            width: 30px;
+            height: 30px;
+            margin: 32px 15px 0 12%;
+        }
+
+        #ul1>:nth-child(8) {
+            width: 65px;
+            height: 90px;
+            position: relative;
+            top: 0px;
+            right: 0%;
+        }
+
+        #ul1>:nth-child(9) {
+            width: 110px;
+            height: 40px;
+            margin-top: 26px;
+            margin-left: 0px;
+            border-radius: 3px;
+            color: rgb(255, 255, 255);
+            font-size: 0.78em;
+            line-height: 40px;
+            position: relative;
+            top: 0px;
+            right: 0%;
+            background-color:rgb(56, 201, 133)
+        }
+
+        #ul1>:nth-child(7)>ul {
+            width: 100%;
+            height: 40px;
+            margin: 27px 0 0 0;
+            padding: 0px;
+            list-style: none;
+        }
+
+        #txt {
+            display: block;
+            width: 200px;
+            height: 36px;
+            margin: 0px;
+            position: absolute;
+            top: 35px;
+            left: 58%;
+            font-size: 0.75em;
+            color: rgb(190, 190, 190);
+            background-color: white;
+            border: 1px solid rgb(194, 194, 194);
+            border-radius: 2px;
+            background-image: url("pic/fu2.png");
+            background-size: 20% 100%;
+            background-position-x: right;
+            background-position-y: center;
+            background-repeat: no-repeat;
+        }
+
+        #ul11 {
+            list-style: none;
+            width: 120px;
+            height: 80px;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        #ul11 li {
+            width: 90%;
+            height: 40px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 0.9em;
+            background-color: white;
+            border: 1px solid rgb(212, 212, 212);
+        }
+
+        #ul12 {
+            display: none;
+            width: 160px;
+            height: 150px;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+            border: 0.4px solid rgba(207, 207, 207, 0.678);
+            border-radius: 5px;
+            position: relative;
+            top: 10px;
+            left: 17%;
+            z-index: 1;
+            list-style: none;
+        }
+
+        #ul12>:nth-child(1) {
+            width: 100%;
+            height: 80px;
+            margin-top: 0px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 0.8em;
+            color: rgb(0, 0, 0);
+
+        }
+
+        input.btn2 {
+            width: 140px;
+            height: 28px;
+            margin-top: 32px;
+            margin-left: 10px;
+            background-color: rgb(56, 201, 133);
+            font-size: 0.8em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+        #list {
+            width: 100%;
+            height: 45px;
+            border-top: 1px solid rgb(228, 228, 228);
+        }
+
+        #list ul {
+            width: 75%;
+            height: 45px;
+            margin-top: 0px;
+            margin-left: 22%;
+            padding: 0px;
+            list-style: none;
+            font-size: 1em;
+            line-height: 45px;
+            text-align: center;
+        }
+
+        #list ul li {
+            float: left;
+            padding: 0px 22px;
+        }
+
+        #list ul li a:link,
+        #list ul li a:visited {
+            color: black;
+        }
+
+        #list ul li a:hover,
+        #list ul li a:active {
+            color: rgb(55, 190, 127);
+        }
+
+        #list ul li:link,
+        #list ul li:visited {
+            color: black;
+        }
+
+        #list ul li:hover,
+        #list ul li:active {
+            color: rgb(55, 190, 127);
+        }
+
+        #kuang1 {
+            width: 175px;
+            height: 130px;
+            position: fixed;
+            top: 170px;
+            left: 81%;
+            background-color: white;
+            border: 3px solid rgba(202, 202, 202, 0.171);
+            border-radius: 3%;
+            z-index: 1;
+        }
+
+        #kuang1 ul {
+            width: 100%;
+            height: 130px;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #kuang1>ul>:nth-child(1) {
+            margin-top: 7px;
+            margin-left: 10%;
+            width: 80%;
+            height: 42px;
+            background-image: url("pic/logo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 40px;
+        }
+
+        #kuang1>ul>:nth-child(2) {
+            margin-top: 7px;
+            margin-left: 6%;
+            width: 90%;
+            height: 25px;
+            font-size: 1.05em;
+            color: rgb(168, 168, 168);
+        }
+
+        #kuang1>ul>:nth-child(3) {
+            margin-top: 7px;
+            margin-left: 8%;
+            width: 83%;
+            height: 33px;
+            font-size: 1.05em;
+            color: rgb(168, 168, 168);
+        }
+
+        input.btn1 {
+            width: 100%;
+            height: 33px;
+            background-color: rgb(56, 201, 133);
+            font-size: 1.05em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+        #kuang2 {
+            width: 55px;
+            height: 140px;
+            position: fixed;
+            top: 350px;
+            left: 92%;
+            z-index: 1;
+        }
+
+        #kuang2 ul {
+            width: 100%;
+            height: 130px;
+            list-style: none;
+            margin-left: 12%;
+            margin-top: 0px;
+            padding: 0px;
+        }
+
+        #kuang2 ul li {
+            width: 70%;
+            height: 38px;
+            list-style: none;
+            margin-top: 3px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(201, 201, 201);
+            text-align: center;
+            line-height: 38px;
+            font-size: 0.95em;
+        }
+
+        #kuang2>ul>:nth-child(3) {
+            background-image: url("pic/fu1.jpg");
+            background-size: 100% 38px;
+            background-repeat: no-repeat;
+        }
+
+        .btn2:hover,
+        .btn1:hover {
+            background-color: rgb(54, 179, 121);
+        }
+
+        #content1 {
+            width: 100%;
+            height: 340px;
+            background-color: #f7f7f7;
+        }
+
+        #con1 {
+            width: 100%;
+            height: 300px;
+        }
+
+        #con11 {
+            display: none;
+            width: 60px;
+            height: 80px;
+            background-color: rgba(204, 204, 204, 0.308);
+            position: absolute;
+            left: 0px;
+            top: 250px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 50px;
+            z-index: 1001;
+        }
+
+        #con12 {
+            display: none;
+            width: 60px;
+            height: 80px;
+            background-color: rgba(204, 204, 204, 0.308);
+            position: absolute;
+            right: 0px;
+            top: 250px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 50px;
+            z-index: 1001;
+        }
+
+        #con2 {
+            width: 100%;
+            height: 30px;
+        }
+
+        #con2>:nth-child(1) {
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            margin: 5px 0 0 46%;
+            float: left;
+            font-size: 30px;
+            color: rgb(117, 117, 117);
+        }
+
+        #con2>:nth-child(2),
+        #con2>:nth-child(3) {
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            margin: 5px 0 0 1%;
+            float: left;
+            font-size: 30px;
+            color: rgb(204, 204, 204);
+        }
+
+        #con2>:nth-child(1):hover,
+        #con2>:nth-child(2):hover,
+        #con2>:nth-child(3):hover {
+            color: rgb(117, 117, 117);
+        }
+
+        #co11 {
+            display: block;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 140px;
+            left: 0%;
+        }
+
+        #co11 ul {
+            list-style: none;
+            width: 96%;
+            height: 300px;
+            margin: 8px 3px 0 13px;
+            padding: 3px 0 0 20px;
+        }
+
+        #co11 ul li:nth-child(1) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 8px 0 6px;
+            background-image: url("pic/t30.jpg");
+            background-size: 100% 100%;
+        }
+
+        #co11 ul li:nth-child(2) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 0 0 7px;
+            background-image: url("pic/t31.gif");
+            background-size: 100% 100%;
+        }
+
+        #co12 {
+            display: none;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 140px;
+            left: 0%;
+        }
+
+        #co12 ul {
+            list-style: none;
+            width: 96%;
+            height: 300px;
+            margin: 8px 3px 0 13px;
+            padding: 3px 0 0 20px;
+        }
+
+        #co12 ul li:nth-child(1) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 8px 0 6px;
+            background-image: url("pic/t32.jpg");
+            background-size: 100% 100%;
+        }
+
+        #co12 ul li:nth-child(2) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 0 0 7px;
+            background-image: url("pic/t33.gif");
+            background-size: 100% 100%;
+        }
+
+        #co13 {
+            display: none;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 140px;
+            left: 0%;
+        }
+
+        #co13 ul {
+            list-style: none;
+            width: 96%;
+            height: 300px;
+            margin: 8px 3px 0 13px;
+            padding: 3px 0 0 20px;
+        }
+
+        #co13 ul li:nth-child(1) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 8px 0 6px;
+            background-image: url("pic/t34.jpg");
+            background-size: 100% 100%;
+        }
+
+        #co13 ul li:nth-child(2) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 0 0 7px;
+            background-image: url("pic/t35.jpg");
+            background-size: 100% 100%;
+        }
+
+        #content2 {
+            width: 100%;
+            height: 380px;
+            background-color: #f0f0f0;
+        }
+
+        #content2>:nth-child(1) {
+            width: 90%;
+            height: 40px;
+            font-size: 1.5em;
+            line-height: 40px;
+            margin: 0 0 0 30px;
+            padding: 0px;
+        }
+
+        #content2>:nth-child(2) {
+            width: 95%;
+            height: 280px;
+            margin: 10px 0 0 30px;
+        }
+
+        #content2>:nth-child(2)>ul {
+            list-style: none;
+            width: 100%;
+            height: 280px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #content2>:nth-child(2)>ul>li {
+            float: left;
+            width: 20%;
+            height: 290px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #content3 {
+            width: 100%;
+            height: 380px;
+            background-color: #f0f0f0;
+        }
+
+        #content3>:nth-child(1) {
+            width: 90%;
+            height: 40px;
+            font-size: 1.5em;
+            line-height: 40px;
+            margin: 0 0 0 30px;
+            padding: 0px;
+        }
+
+        #content3>:nth-child(2) {
+            width: 95%;
+            height: 280px;
+            margin: 10px 0 0 30px;
+        }
+
+        #content3>:nth-child(2)>ul {
+            list-style: none;
+            width: 100%;
+            height: 280px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #content3>:nth-child(2)>ul>li {
+            float: left;
+            width: 20%;
+            height: 290px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #content4 {
+            width: 100%;
+            height: 380px;
+            background-color: #f0f0f0;
+        }
+
+        #content4>:nth-child(1) {
+            width: 90%;
+            height: 40px;
+            font-size: 1.5em;
+            line-height: 40px;
+            margin: 0 0 0 30px;
+            padding: 0px;
+        }
+
+        #content4>:nth-child(2) {
+            width: 95%;
+            height: 280px;
+            margin: 10px 0 0 30px;
+        }
+
+        #content4>:nth-child(2)>ul {
+            list-style: none;
+            width: 100%;
+            height: 280px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #content4>:nth-child(2)>ul>li {
+            float: left;
+            width: 20%;
+            height: 290px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #c1>:nth-child(1) {
+            background-image: url("pic/t36.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #c2>:nth-child(1) {
+            background-image: url("pic/t37.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #c3>:nth-child(1) {
+            background-image: url("pic/t38.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #c4>:nth-child(1) {
+            background-image: url("pic/t39.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #c5>:nth-child(1) {
+            background-image: url("pic/t40.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #co1>:nth-child(1) {
+            background-image: url("pic/t41.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #co2>:nth-child(1) {
+            background-image: url("pic/t42.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #co3>:nth-child(1) {
+            background-image: url("pic/t43.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #co4>:nth-child(1) {
+            background-image: url("pic/t44.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #co5>:nth-child(1) {
+            background-image: url("pic/t45.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #cont1>:nth-child(1) {
+            background-image: url("pic/t46.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #cont2>:nth-child(1) {
+            background-image: url("pic/t47.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #cont3>:nth-child(1) {
+            background-image: url("pic/t48.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #cont4>:nth-child(1) {
+            background-image: url("pic/t49.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        #cont5>:nth-child(1) {
+            background-image: url("pic/t50.jpg");
+            background-size: 100% 100%;
+            background-position-x: center;
+            background-position-y: center;
+        }
+
+        .t {
+            width: 95%;
+            height: 200px;
+        }
+
+        .z1 {
+            width: 95%;
+            height: 20px;
+            font-size: 1em;
+            margin: 8px 0 0 0;
+            line-height: 20px;
+        }
+
+        .z1:hover {
+            color: rgb(56, 201, 133);
+        }
+
+        .z2 {
+            width: 95%;
+            height: 20px;
+            font-size: 0.9em;
+            margin: 3px 0 0 0;
+            line-height: 20px;
+            color: #c0c0c0;
+        }
+
+        .z2:hover {
+            color: rgb(56, 201, 133);
+        }
+
+        .z3 {
+            width: 95%;
+            height: 35px;
+        }
+
+        .z3>ul {
+            width: 100%;
+            height: 35px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .z3>ul>li:nth-child(1) {
+            float: left;
+            width: 50%;
+            height: 35px;
+            line-height: 30px;
+            font-size: 0.9em;
+            color: #c0c0c0;
+        }
+
+        .z3>ul>li:nth-child(2) {
+            float: left;
+            width: 42%;
+            height: 27px;
+            line-height: 27px;
+            font-size: 0.9em;
+            margin: 0 0 0 6.5%;
+            color: #000000;
+            text-align: center;
+            border: 1px solid rgb(187, 187, 187);
+            background-color: white;
+        }
+
+        .z3>ul>li:nth-child(2):hover {
+            background-color: rgb(226, 226, 226);
+        }
+
+        #bottom {
+            width: 100%;
+            height: 100px;
+            background-color: #515151;
+        }
+
+        #bottom>div:nth-child(1) ul {
+            width: 100%;
+            height: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 20px 0 0 0;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(1) {
+            float: left;
+            width: 5%;
+            height: 20px;
+            line-height: 20px;
+            margin: 0 0 0 18%;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(5),
+        #bottom>div:nth-child(1) ul li:nth-child(9),
+        #bottom>div:nth-child(1) ul li:nth-child(11),
+        #bottom>div:nth-child(1) ul li:nth-child(13),
+        #bottom>div:nth-child(1) ul li:nth-child(15),
+        #bottom>div:nth-child(1) ul li:nth-child(17),
+        #bottom>div:nth-child(1) ul li:nth-child(19) {
+            float: left;
+            width: 5%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(7),
+        #bottom>div:nth-child(1) ul li:nth-child(3) {
+            float: left;
+            width: 8%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(1):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(7):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(3):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(5):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(9):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(11):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(13):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(15):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(17):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(19):hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(2),
+        #bottom>div:nth-child(1) ul li:nth-child(4),
+        #bottom>div:nth-child(1) ul li:nth-child(6),
+        #bottom>div:nth-child(1) ul li:nth-child(8),
+        #bottom>div:nth-child(1) ul li:nth-child(10),
+        #bottom>div:nth-child(1) ul li:nth-child(12),
+        #bottom>div:nth-child(1) ul li:nth-child(14),
+        #bottom>div:nth-child(1) ul li:nth-child(16),
+        #bottom>div:nth-child(1) ul li:nth-child(18) {
+            float: left;
+            width: 0.5%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(2) {
+            width: 100%;
+            height: 20px;
+            margin: 0;
+            padding-top: 5px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(3) {
+            width: 100%;
+            height: 20px;
+            margin: 0;
+            padding-top: 6px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        @media screen and (min-width:1200px) {
+
+            #ul1>:nth-child(8) {
+                width: 65px;
+                height: 90px;
+                position: relative;
+                top: 0px;
+                left: 3%;
+            }
+
+            #ul1>:nth-child(9) {
+                width: 110px;
+                height: 40px;
+                margin-top: 26px;
+                margin-left: 0px;
+                background-color: rgb(56, 201, 133);
+                border-radius: 3px;
+                color: rgb(255, 255, 255);
+                font-size: 0.78em;
+                line-height: 40px;
+                position: relative;
+                top: 0px;
+                left: 3%;
+            }
+        }
+
+        @media screen and (max-width:1160px) {
+            #txt {
+                display: none;
+            }
+
+            #ul1>:nth-child(7) {
+                width: 38px;
+                height: 37px;
+                position: relative;
+                top: 26px;
+                left: 0;
+                background-color: rgb(255, 255, 255);
+                margin: 0px;
+                background-image: url("pic/fu2.png");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                border: 1px solid rgb(194, 194, 194);
+                border-radius: 2px;
+            }
+        }
+
+        @media screen and (max-width:1040px) {
+
+            #con2,
+            #list {
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <ul id="ul1">
+            <li></li>
+            <li>音乐馆</li>
+            <li>我的音乐</li>
+            <li id="u1">客户端
+                <ul id="ul12">
+                    <li>
+                        <p>HQ高品质 全员开启</p>
+                        <p>独家音效 全面升级</p>
+                        <p>轻盈视觉 动态皮肤</p>
+                    </li>
+                    <li><input type="button" value="下载体验" class="btn2"></li>
+                </ul>
+            </li>
+            <li>开放平台</li>
+            <li>VIP</li>
+            <li id="txt1">
+                <ul>
+                    <li><input type="text" id="txt" value="搜索音乐、MV、歌单、用户"></li>
+                </ul>
+            </li>
+            <li>登录</li>
+            <li id="u2">开通VIP
+                <ul id="ul11">
+                    <li>开通绿钻豪华版</li>
+                    <li>开通付费包</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <div id="list">
+        <ul>
+            <li><a href="shouye.html">首页</a></li>
+            <li><a href="geshou.html">歌手</a></li>
+            <li>新碟</li>
+            <li>排行榜</li>
+            <li>分类歌单</li>
+            <li>电台</li>
+            <li>MV</li>
+            <li><a href="#">数字专辑</a></li>
+            <li>票务</li>
+        </ul>
+    </div>
+    <div id="kuang1">
+        <ul>
+            <li></li>
+            <li>千万高品质曲库尽享</li>
+            <li><input type="button" value="客户端下载" class="btn1"></li>
+        </ul>
+    </div>
+    <div id="kuang2">
+        <ul>
+            <li><a href="#banner">︿</a></li>
+            <li>反馈</li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="content1">
+        <div id="con1">
+            <div id="con11">﹤</div>
+            <div id="co11" class="img-slide">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="co12" class="img-slide">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="co13" class="img-slide">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="con12">﹥</div>
+        </div>
+        <div id="con2">
+            <div id="con21" class="dot">•</div>
+            <div id="con22" class="dot">•</div>
+            <div id="con23" class="dot">•</div>
+        </div>
+    </div>
+    <div id="content2">
+        <div>最新上架</div>
+        <div>
+            <ul>
+                <li id="c1">
+                    <div class="t"></div>
+                    <div class="z1">百家弟子</div>
+                    <div class="z2">窦唯 /朝简</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥10</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="c2">
+                    <div class="t"></div>
+                    <div class="z1">幼鸟指南</div>
+                    <div class="z2">毛不易</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥20</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="c3">
+                    <div class="t"></div>
+                    <div class="z1">G.O.D</div>
+                    <div class="z2">ONER岳岳</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥8</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="c4">
+                    <div class="t"></div>
+                    <div class="z1">卧虎藏龙-武侠三部</div>
+                    <div class="z2">谭盾</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥26</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="c5">
+                    <div class="t"></div>
+                    <div class="z1">RefleXtion</div>
+                    <div class="z2">THE9</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥5</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="content3">
+        <div>本周热销</div>
+        <div>
+            <ul>
+                <li id="co1">
+                    <div class="t"></div>
+                    <div class="z1">EPSILON</div>
+                    <div class="z2">THE9-刘雨昕</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥8</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="co2">
+                    <div class="t"></div>
+                    <div class="z1">迷</div>
+                    <div class="z2">蔡徐坤</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥26</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="co3">
+                    <div class="t"></div>
+                    <div class="z1">Justice (中国豪华特别版)</div>
+                    <div class="z2">Justin Bieber (贾斯汀·比伯)</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥25</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="co4">
+                    <div class="t"></div>
+                    <div class="z1">和自己对话</div>
+                    <div class="z2">林俊杰</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥18</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="co5">
+                    <div class="t"></div>
+                    <div class="z1">交换余生</div>
+                    <div class="z2">林俊杰</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥3</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="content4">
+        <div>新声力量集结</div>
+        <div>
+            <ul>
+                <li id="cont1">
+                    <div class="t"></div>
+                    <div class="z1">镜中兽（Mirror Me）</div>
+                    <div class="z2">姚柏南</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥12</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="cont2">
+                    <div class="t"></div>
+                    <div class="z1">深深</div>
+                    <div class="z2">李振宁</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥6</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="cont3">
+                    <div class="t"></div>
+                    <div class="z1">天气：晴</div>
+                    <div class="z2">Sunnee杨芸晴</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥20</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="cont4">
+                    <div class="t"></div>
+                    <div class="z1">硬糖定律</div>
+                    <div class="z2">硬糖少女303</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥10</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="cont5">
+                    <div class="t"></div>
+                    <div class="z1">虚实X境</div>
+                    <div class="z2">THE9</div>
+                    <div class="z3">
+                        <ul>
+                            <li>¥18</li>
+                            <li>立即购买</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="bottom">
+        <div>
+            <ul>
+                <li>关于腾讯</li>
+                <li>|</li>
+                <li>About Tencent</li>
+                <li>|</li>
+                <li>服务条款</li>
+                <li>|</li>
+                <li>用户服务协议</li>
+                <li>|</li>
+                <li>隐私政策</li>
+                <li>|</li>
+                <li>权利声明</li>
+                <li>|</li>
+                <li>广告服务</li>
+                <li>|</li>
+                <li>腾讯招聘</li>
+                <li>|</li>
+                <li>客服中心</li>
+                <li>|</li>
+                <li>网站导航</li>
+            </ul>
+        </div>
+        <div>Copyright © 1998 - 2021 Tencent. All Rights Reserved.</div>
+        <div>腾讯公司 版权所有 网络文化经营许可证：粤网文[2018]6725-2386号</div>
+    </div>
+</body>
+<script>
+    window.onload = init;
+    function init() {
+        var txt=document.getElementById("txt");
+        txt.onmouseover=function(){
+            txt.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt.onmouseout=function(){
+            txt.style.backgroundImage="url('pic/fu2.png')";
+        }
+
+        var txt1=document.getElementById("txt1");
+        txt1.onmouseover=function(){
+            txt1.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt1.onmouseout=function(){
+            txt1.style.backgroundImage="url('pic/fu2.png')";
+        }
+        var u1 = document.getElementById("u1");
+        u1.onmouseover = function () {
+            document.getElementById("ul12").style.display = "block";
+        }
+        u1.onmouseout = function () {
+            document.getElementById("ul12").style.display = "none";
+        }
+
+        var u2 = document.getElementById("u2");
+        u2.onmouseover = function () {
+            document.getElementById("ul11").style.display = "block";
+        }
+        u2.onmouseout = function () {
+            document.getElementById("ul11").style.display = "none";
+        }
+
+        var con1 = document.getElementById("con1");
+        con1.onmouseover = function () {
+            document.getElementById("con11").style.display = "block";
+            document.getElementById("con12").style.display = "block";
+        }
+        con1.onmouseout = function () {
+            document.getElementById("con11").style.display = "none";
+            document.getElementById("con12").style.display = "none";
+        }
+        var con11 = document.getElementById("con11");
+        con11.onclick = function () {
+            if (document.getElementById("co11").style.display == "block") {
+                document.getElementById("co11").style.display = "none";
+                document.getElementById("co12").style.display = "none";
+                document.getElementById("co13").style.display = "block";
+                con23.style.color = "rgb(117, 117, 117)";
+                con21.style.color = "rgb(204, 204, 204)";
+                con22.style.color = "rgb(204, 204, 204)";
+            } else if (document.getElementById("co12").style.display == "block") {
+                document.getElementById("co11").style.display = "block";
+                document.getElementById("co13").style.display = "none";
+                document.getElementById("co12").style.display = "none";
+                con21.style.color = "rgb(117, 117, 117)";
+                con23.style.color = "rgb(204, 204, 204)";
+                con22.style.color = "rgb(204, 204, 204)";
+            } else {
+                document.getElementById("co12").style.display = "block";
+                document.getElementById("co11").style.display = "none";
+                document.getElementById("co13").style.display = "none";
+                con22.style.color = "rgb(117, 117, 117)";
+                con23.style.color = "rgb(204, 204, 204)";
+                con21.style.color = "rgb(204, 204, 204)";
+            }
+
+        }
+
+        var con12 = document.getElementById("con12");
+        con12.onclick = function () {
+            if (document.getElementById("co11").style.display == "block") {
+                document.getElementById("co11").style.display = "none";
+                document.getElementById("co13").style.display = "none";
+                document.getElementById("co12").style.display = "block";
+                con22.style.color = "rgb(117, 117, 117)";
+                con23.style.color = "rgb(204, 204, 204)";
+                con21.style.color = "rgb(204, 204, 204)";
+            } else if (document.getElementById("co12").style.display == "block") {
+                document.getElementById("co13").style.display = "block";
+                document.getElementById("co11").style.display = "none";
+                document.getElementById("co12").style.display = "none";
+                con23.style.color = "rgb(117, 117, 117)";
+                con21.style.color = "rgb(204, 204, 204)";
+                con22.style.color = "rgb(204, 204, 204)";
+            } else {
+                document.getElementById("co11").style.display = "block";
+                document.getElementById("co12").style.display = "none";
+                document.getElementById("co13").style.display = "none";
+                con21.style.color = "rgb(117, 117, 117)";
+                con23.style.color = "rgb(204, 204, 204)";
+                con22.style.color = "rgb(204, 204, 204)";
+            }
+
+        }
+        var con21 = document.getElementById("con21");
+        var con22 = document.getElementById("con22");
+        var con23 = document.getElementById("con23");
+        con21.onclick = function () {
+            con21.style.color = "rgb(117, 117, 117)";
+            con22.style.color = "rgb(204, 204, 204)";
+            con23.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("co11").style.display = "none") {
+                document.getElementById("co12").style.display = "none";
+                document.getElementById("co13").style.display = "none";
+                document.getElementById("co11").style.display = "";
+            }
+
+        }
+
+
+        con22.onclick = function () {
+            con22.style.color = "rgb(117, 117, 117)";
+            con21.style.color = "rgb(204, 204, 204)";
+            con23.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("co11").style.display = "none") {
+                document.getElementById("co11").style.display = "none";
+                document.getElementById("co13").style.display = "none";
+                document.getElementById("co12").style.display = "block";
+            }
+
+        }
+
+        con23.onclick = function () {
+            con23.style.color = "rgb(117, 117, 117)";
+            con21.style.color = "rgb(204, 204, 204)";
+            con22.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("co13").style.display = "none") {
+                document.getElementById("co11").style.display = "none";
+                document.getElementById("co12").style.display = "none";
+                document.getElementById("co13").style.display = "block";
+            }
+
+        }
+
+        var index = 0, len;
+        var imgBox = document.getElementsByClassName("img-slide");
+        var imgDot = document.getElementsByClassName("dot")
+        len = imgBox.length;
+        function slideShow() {
+            index++;
+            if (index >= len) index = 0;
+            for (var i = 0; i < len; i++) {
+                imgBox[i].style.display = 'none';
+                imgDot[i].style.color = "rgb(204, 204, 204)";
+            }
+            imgBox[index].style.display = 'block';
+            imgDot[index].style.color = "rgb(117, 117, 117)";
+        }
+
+        setInterval(slideShow, 2000);
+
+        var t = document.getElementsByClassName("t");
+        for (var i = 0; i < t.length; i++) {
+            t[i].onmouseover = function () {
+                this.style.backgroundSize = "105% 105%";
+            }
+            t[i].onmouseout = function () {
+                this.style.backgroundSize = "100% 100%";
+            }
+        }
+
+
+
+    }
+</script>
+
+</html>

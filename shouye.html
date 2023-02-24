@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <style>
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            text-decoration: none;
+        }
+
+        #banner {
+            width: 100%;
+            height: 90px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #ul1 {
+            width: 100%;
+            height: 90px;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-size: 1.1em;
+            line-height: 90px;
+            text-align: center;
+        }
+
+        #ul1 li {
+            float: left;
+            padding: 0px;
+            color: black;
+        }
+
+        #ul1>li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #ul1>:nth-child(2):hover,
+        #ul1>:nth-child(11):hover {
+            color: rgb(255, 255, 255);
+        }
+
+        #ul12>:nth-child(1):hover {
+            color: black;
+        }
+
+        #ul11 li:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgb(55, 190, 127);
+        }
+
+        #ul1>:nth-child(1) {
+            width: 240px;
+            height: 90px;
+            background-image: url("pic/logo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 80px;
+        }
+
+        #ul1>:nth-child(2) {
+            width: 90px;
+            height: 90px;
+            background-color: rgb(55, 190, 127);
+            color: white;
+        }
+
+        #ul1>:nth-child(3) {
+            width: 100px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(4) {
+            width: 100px;
+            height: 30px;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 1.1em;
+        }
+
+        #ul1>:nth-child(5) {
+            width: 95px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(6) {
+            width: 70px;
+            height: 90px;
+        }
+
+        #ul1>:nth-child(7) {
+            width: 30px;
+            height: 30px;
+            margin: 32px 15px 0 12%;
+        }
+
+        #ul1>:nth-child(8) {
+            width: 65px;
+            height: 90px;
+            position: relative;
+            top: 0px;
+            right: 0%;
+        }
+
+        #ul1>:nth-child(11) {
+            width: 110px;
+            height: 40px;
+            margin-top: 26px;
+            margin-left: 0px;
+            background-color: rgb(56, 201, 133);
+            border-radius: 3px;
+            color: rgb(255, 255, 255);
+            font-size: 0.78em;
+            line-height: 40px;
+            position: relative;
+            top: 0px;
+            right: 0%;
+        }
+
+        #ul1>:nth-child(7)>ul {
+            width: 100%;
+            height: 40px;
+            margin: 27px 0 0 0;
+            padding: 0px;
+            list-style: none;
+        }
+
+        #txt {
+            width: 200px;
+            height: 36px;
+            margin: 0px;
+            position: absolute;
+            top: 35px;
+            left: 58%;
+            font-size: 0.75em;
+            color: rgb(190, 190, 190);
+            background-color: white;
+            border: 1px solid rgb(194, 194, 194);
+            border-radius: 2px;
+            background-image: url("pic/fu2.png");
+            background-size: 20% 100%;
+            background-position-x: right;
+            background-position-y: center;
+            background-repeat: no-repeat;
+        }
+
+        #ul11 {
+            display: none;
+            list-style: none;
+            width: 120px;
+            height: 80px;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+
+        #ul11 li {
+            width: 90%;
+            height: 40px;
+            margin: 0px;
+            padding: 0px;
+            font-size: 0.9em;
+            background-color: white;
+            border: 1px solid rgb(212, 212, 212);
+        }
+
+        #ul12 {
+            display: none;
+            width: 160px;
+            height: 150px;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(255, 255, 255);
+            border: 0.4px solid rgba(207, 207, 207, 0.678);
+            border-radius: 5px;
+            position: relative;
+            top: 10px;
+            left: 17%;
+            z-index: 1;
+            list-style: none;
+        }
+
+        #ul12>:nth-child(1) {
+            width: 100%;
+            height: 80px;
+            margin-top: 0px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 0.8em;
+            color: rgb(0, 0, 0);
+
+        }
+
+        input.btn2 {
+            width: 140px;
+            height: 28px;
+            margin-top: 32px;
+            margin-left: 10px;
+            background-color: rgb(56, 201, 133);
+            font-size: 0.8em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+
+        #list {
+            width: 100%;
+            height: 45px;
+            border-top: 1px solid rgb(228, 228, 228);
+        }
+
+        #list ul {
+            width: 75%;
+            height: 45px;
+            margin-top: 0px;
+            margin-left: 22%;
+            padding: 0px;
+            list-style: none;
+            font-size: 1em;
+            line-height: 45px;
+            text-align: center;
+        }
+
+        #list ul li {
+            float: left;
+            padding: 0px 22px;
+        }
+
+        #list ul li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #list ul li a:link,
+        #list ul li a:visited {
+            color: black;
+        }
+
+        #list ul li a:hover,
+        #list ul li a:active {
+            color: rgb(55, 190, 127);
+        }
+
+        #kuang1 {
+            width: 175px;
+            height: 130px;
+            position: fixed;
+            top: 170px;
+            left: 81%;
+            background-color: white;
+            border: 3px solid rgba(202, 202, 202, 0.171);
+            border-radius: 3%;
+            z-index: 1;
+        }
+
+        #kuang1 ul {
+            width: 100%;
+            height: 130px;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #kuang1>ul>:nth-child(1) {
+            margin-top: 7px;
+            margin-left: 10%;
+            width: 80%;
+            height: 42px;
+            background-image: url("pic/logo.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 40px;
+        }
+
+        #kuang1>ul>:nth-child(2) {
+            margin-top: 7px;
+            margin-left: 6%;
+            width: 90%;
+            height: 25px;
+            font-size: 1.05em;
+            color: rgb(168, 168, 168);
+        }
+
+        #kuang1>ul>:nth-child(3) {
+            margin-top: 7px;
+            margin-left: 8%;
+            width: 83%;
+            height: 33px;
+            font-size: 1.05em;
+            color: rgb(168, 168, 168);
+        }
+
+        input.btn1 {
+            width: 100%;
+            height: 33px;
+            background-color: rgb(56, 201, 133);
+            font-size: 1.05em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+        #kuang2 {
+            width: 55px;
+            height: 140px;
+            position: fixed;
+            top: 350px;
+            left: 92%;
+            z-index: 1;
+        }
+
+        #kuang2 ul {
+            width: 100%;
+            height: 130px;
+            list-style: none;
+            margin-left: 12%;
+            margin-top: 0px;
+            padding: 0px;
+        }
+
+        #kuang2 ul li {
+            width: 70%;
+            height: 38px;
+            list-style: none;
+            margin-top: 3px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(201, 201, 201);
+            text-align: center;
+            line-height: 38px;
+            font-size: 0.95em;
+        }
+
+        #kuang2>ul>:nth-child(3) {
+            background-image: url("pic/fu1.jpg");
+            background-size: 100% 38px;
+            background-repeat: no-repeat;
+        }
+        
+        #light {
+            display: none;
+            position: absolute;
+            top: 10%;
+            left: 240px;
+            width: 680px;
+            height: 420px;
+            padding: 10px;
+            border: 3px solid rgba(187, 187, 187, 0.171);
+            background-color: white;
+            z-index: 1002;
+        }
+
+        #light1 {
+            width: 100%;
+            height: 40px;
+            margin: 0px;
+            padding: 0px;
+            border-bottom: 0.8px solid rgb(231, 231, 231);
+        }
+
+        #light1>ul {
+            list-style: none;
+            width: 100%;
+            height: 40px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #light1>ul>:nth-child(1) {
+            width: 10%;
+            height: 40px;
+            float: left;
+            line-height: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            margin: 0 0 0 215px;
+            padding: 0px;
+        }
+
+        #light1>ul>:nth-child(2) {
+            width: 10%;
+            height: 40px;
+            float: left;
+            line-height: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            margin: 0 0 0 115px;
+            padding: 0px;
+        }
+
+        #light1>ul>:nth-child(3) {
+            width: 3%;
+            height: 30px;
+            float: left;
+            line-height: 30px;
+            text-align: right;
+            font-size: 1.3em;
+            margin: 0 0 0 190px;
+            padding: 0px;
+        }
+
+        #light1>ul>li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #light2 {
+            width: 100%;
+            height: 300px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #light21 {
+            float: left;
+            width: 65%;
+            height: 300px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #light21>h1 {
+            width: 100%;
+            height: 35px;
+            font-size: 1.2em;
+            line-height: 40px;
+        }
+
+        #light21>p {
+            width: 50%;
+            height: 55px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 0.9em;
+            margin: 0 0 0 120px;
+        }
+
+        #light21>:nth-child(3) {
+            width: 33%;
+            height: 135px;
+            position: relative;
+            left: 150px;
+            top: 10px;
+            border: 1px solid rgb(197, 197, 197);
+            background-image: url("pic/t6.jpg");
+            background-size: 100% 100%;
+        }
+
+        #light21>ul {
+            list-style: none;
+            width: 270px;
+            height: 25px;
+            margin: 18px 0 0 125px;
+        }
+
+        #light21>ul>li {
+            width: 77px;
+            height: 18px;
+            text-align: center;
+            font-size: 0.7em;
+            line-height: 18px;
+            color: rgb(197, 197, 197);
+        }
+
+        #b a:link,
+        #b a:visited {
+            width: 77px;
+            height: 18px;
+            text-align: center;
+            font-size: 0.7em;
+            line-height: 18px;
+            color: rgb(197, 197, 197);
+        }
+
+        #light21>ul>:nth-child(2),
+        #light21>ul>:nth-child(4) {
+            width: 10px;
+            height: 18px;
+            text-align: center;
+            font-size: 0.7em;
+            line-height: 18px;
+            color: rgb(197, 197, 197);
+        }
+
+        #light21>ul>li:hover {
+            border-bottom: 1px solid rgb(197, 197, 197);
+        }
+
+        #light22 {
+            float: left;
+            width: 34%;
+            height: 300px;
+            margin: 0px;
+            padding: 0px;
+            border-left: 1px solid rgb(243, 243, 243);
+        }
+
+        #light22>:nth-child(1) {
+            width: 95%;
+            height: 20px;
+            margin: 35px 0 0 5px;
+            border-top: 1px solid rgb(236, 236, 236);
+            font-size: 0.75em;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        #light22>:nth-child(2),
+        #light22>:nth-child(3) {
+            width: 95%;
+            height: 20px;
+            margin: 5px 0 0 5px;
+            border-top: 1px solid rgb(236, 236, 236);
+            font-size: 0.75em;
+            line-height: 20px;
+            text-align: left;
+        }
+
+        #light22>:nth-child(4) {
+            width: 95%;
+            height: 20px;
+            margin: 20px 0 0 5px;
+            font-size: 0.7em;
+            line-height: 20px;
+            text-align: left;
+        }
+
+        #light3 {
+            width: 100%;
+            height: 40px;
+        }
+
+        input.btn3 {
+            width: 270px;
+            height: 40px;
+            background-color: rgb(56, 201, 133);
+            font-size: 0.95em;
+            color: white;
+            border-radius: 20px;
+            border: 0px;
+        }
+
+        .btn3:hover,
+        .btn2:hover,
+        .btn1:hover {
+            background-color: rgb(54, 179, 121);
+        }
+
+        #fade {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(197, 197, 197);
+            z-index: 1001;
+            opacity: .80;
+        }
+
+        #f1:link,
+        #f1:visited,
+        #f3:link,
+        #f3:visited,
+        #f4:link,
+        #f4:visited {
+            color: rgb(0, 0, 0);
+        }
+
+        #f1:hover,
+        #f1:active,
+        #f3:hover,
+        #f3:active,
+        #f4:hover,
+        #f4:active {
+            color: rgb(55, 190, 127);
+        }
+
+        #f2:link,
+        #f2:visited {
+            color: rgb(95, 95, 95);
+        }
+
+        #f2:hover,
+        #f2:active {
+            color: rgb(55, 190, 127);
+        }
+
+        #li2 {
+            display: none;
+            width: 100%;
+            height: 300px;
+        }
+
+        #li2>:nth-child(1) {
+            width: 25%;
+            height: 150px;
+            position: relative;
+            top: 40px;
+            left: 250px;
+            border: 1px solid rgb(197, 197, 197);
+            background-image: url("pic/t7.jpg");
+            background-size: 100% 100%;
+        }
+
+        #li2>:nth-child(2) {
+            width: 37%;
+            height: 23px;
+            text-align: center;
+            color: rgb(122, 122, 122);
+            margin: 70px 0 0 215px;
+            font-size: 0.8em;
+            line-height: 23px;
+            border-radius: 50px;
+            text-indent: 3px;
+            background-color: rgb(240, 240, 240);
+        }
+
+        #li2>:nth-child(3) {
+            width: 42%;
+            height: 23px;
+            text-align: center;
+            color: rgb(173, 173, 173);
+            margin: 20px 0 0 200px;
+            font-size: 0.8em;
+            line-height: 23px;
+        }
+
+        #content1 {
+            width: 100%;
+            height: 500px;
+            background-image: linear-gradient(#f1f1f1, #ffffff);
+        }
+
+        #content1>:nth-child(1) {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 1.95em;
+            font-weight: 550;
+            letter-spacing: 10px;
+            color: rgb(66, 66, 66);
+        }
+
+        #co1 {
+            width: 65%;
+            height: 400px;
+            float: left;
+        }
+
+        #co2 {
+            width: 35%;
+            height: 400px;
+            float: left;
+        }
+
+        #co21 {
+            width: 85%;
+            height: 90px;
+            margin: 8px 0 0 30px;
+        }
+
+        #co21>:nth-child(1),
+        #co22>:nth-child(1),
+        #co23>:nth-child(1),
+        #co24>:nth-child(1) {
+            width: 90px;
+            height: 90px;
+            float: left;
+            background-image: url("pic/t1.jpg");
+            background-size: 100% 100%;
+        }
+
+        #co211,
+        #co221,
+        #co231,
+        #co241 {
+            float: left;
+            width: 160px;
+            height: 80px;
+            margin: 5px 0 0 10px;
+        }
+
+        #co211>:nth-child(2):hover,
+        #co221>:nth-child(1):hover,
+        #co221>:nth-child(2):hover,
+        #co231>:nth-child(1):hover,
+        #co231>:nth-child(2):hover,
+        #co241>:nth-child(1):hover,
+        #co241>:nth-child(2):hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #co2111 a:link,
+        #co2111 a:visited {
+            color: rgb(0, 0, 0);
+        }
+
+        #co2111 a:hover,
+        #co2111 a:active {
+            color: rgb(55, 190, 127);
+        }
+
+        #co211>:nth-child(1) {
+            margin: 12px 0 0 0;
+            width: 100%;
+            height: 25px;
+            font-size: 0.9em;
+            line-height: 25px;
+        }
+
+        #co221>:nth-child(1) {
+            margin: 12px 0 0 0;
+            width: 40%;
+            height: 25px;
+            font-size: 0.9em;
+            line-height: 25px;
+        }
+
+        #co231>:nth-child(1) {
+            margin: 12px 0 0 0;
+            width: 90%;
+            height: 25px;
+            font-size: 0.9em;
+            line-height: 25px;
+        }
+
+        #co241>:nth-child(1) {
+            margin: 12px 0 0 0;
+            width: 65%;
+            height: 25px;
+            font-size: 0.9em;
+            line-height: 25px;
+        }
+
+        #co211>:nth-child(2),
+        #co221>:nth-child(2),
+        #co231>:nth-child(2),
+        #co241>:nth-child(2) {
+            margin: 0px;
+            width: 55%;
+            height: 25px;
+            font-size: 0.85em;
+            line-height: 25px;
+            color: rgb(179, 179, 179);
+        }
+
+        #co22 {
+            width: 85%;
+            height: 90px;
+            margin: 8px 0 0 30px;
+        }
+
+        #co23 {
+            width: 85%;
+            height: 90px;
+            margin: 8px 0 0 30px;
+        }
+
+        #co24 {
+            width: 85%;
+            height: 90px;
+            margin: 8px 0 0 30px;
+        }
+
+        #content2 {
+            width: 100%;
+            height: 500px;
+            background-image: linear-gradient(#f1f1f1, #ffffff);
+        }
+
+        #content2>:nth-child(1) {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 1.95em;
+            font-weight: 550;
+            letter-spacing: 10px;
+            color: rgb(66, 66, 66);
+        }
+
+        #con2 {
+            width: 100%;
+            height: 45px;
+        }
+
+        #con2 ul {
+            width: 50%;
+            height: 45px;
+            margin-top: 0px;
+            margin-left: 27.5%;
+            padding: 0px;
+            list-style: none;
+            font-size: 1em;
+            line-height: 45px;
+            text-align: center;
+        }
+
+        #con2 ul li {
+            float: left;
+            padding: 0px 22px;
+        }
+
+        #con2 ul li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #con3 {
+            width: 100%;
+            height: 320px;
+        }
+
+        #co31 {
+            display: none;
+            width: 60px;
+            height: 80px;
+            background-color: rgba(204, 204, 204, 0.308);
+            position: absolute;
+            left: 0px;
+            top: 890px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 50px;
+            z-index: 1001;
+        }
+
+        #co32 {
+            display: none;
+            width: 60px;
+            height: 80px;
+            background-color: rgba(204, 204, 204, 0.308);
+            position: absolute;
+            right: 0px;
+            top: 890px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 50px;
+            z-index: 1001;
+        }
+
+        #cont1 {
+            display: block;
+            width: 100%;
+            height: 320px;
+            position: absolute;
+            top: 790px;
+            left: 0%;
+        }
+
+        #cont2 {
+            display: none;
+            width: 100%;
+            height: 320px;
+            position: absolute;
+            top: 790px;
+            left: 100%;
+        }
+
+        #cont3 {
+            display: none;
+            width: 100%;
+            height: 320px;
+            position: absolute;
+            top: 790px;
+            left: 200%;
+        }
+
+        #con31,
+        #cont31,
+        #conte31 {
+            width: 18%;
+            height: 320px;
+            float: left;
+            margin: 0 5px 0 3%;
+        }
+
+        #con32,
+        #con33,
+        #con34,
+        #con35,
+        #cont32,
+        #cont33,
+        #cont34,
+        #cont35,
+        #conte32 {
+            width: 18%;
+            height: 320px;
+            float: left;
+            margin: 0 7px;
+        }
+
+        #con311 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t12.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con31>:nth-child(2),
+        #con32>:nth-child(2),
+        #con33>:nth-child(2),
+        #con34>:nth-child(2),
+        #con35>:nth-child(2),
+        #cont31>:nth-child(2),
+        #cont32>:nth-child(2),
+        #cont33>:nth-child(2),
+        #cont34>:nth-child(2),
+        #cont35>:nth-child(2),
+        #conte31>:nth-child(2),
+        #conte32>:nth-child(2) {
+            width: 100%;
+            height: 20px;
+            font-size: 1em;
+            line-height: 20px;
+            margin: 10px 0 0 0;
+            color: black;
+        }
+
+        #con31>:nth-child(3),
+        #con34>:nth-child(3),
+        #con35>:nth-child(3),
+        #cont33>:nth-child(3),
+        #conte31>:nth-child(3),
+        #conte32>:nth-child(3) {
+            width: 100%;
+            height: 20px;
+            font-size: 0.9em;
+            line-height: 20px;
+            margin: 5px 0 0 0;
+            color: rgb(155, 155, 155);
+        }
+
+        #con321 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t13.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con32>:nth-child(3),
+        #con33>:nth-child(3) {
+            width: 100%;
+            height: 20px;
+            font-size: 0.9em;
+            line-height: 20px;
+            margin: 20px 0 0 0;
+            color: rgb(155, 155, 155);
+        }
+
+        #con331 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t14.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con341 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t15.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con351 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t16.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con311>:nth-child(1),
+        #con321>:nth-child(1),
+        #con331>:nth-child(1),
+        #con341>:nth-child(1),
+        #con351>:nth-child(1),
+        #cont311>:nth-child(1),
+        #cont321>:nth-child(1),
+        #cont331>:nth-child(1),
+        #cont341>:nth-child(1),
+        #cont351>:nth-child(1),
+        #conte311>:nth-child(1),
+        #conte321>:nth-child(1) {
+            display: none;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            top: 72px;
+            left: 80px;
+            background-image: url("pic/t5.jpg");
+            background-size: 40px 40px;
+            background-position-x: center;
+            background-position-y: center;
+            border-radius: 50%;
+        }
+
+        #cont311 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t17.jpg");
+            background-size: 100% 100%;
+        }
+
+        #cont321 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t18.jpg");
+            background-size: 100% 100%;
+        }
+
+        #cont331 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t19.jpg");
+            background-size: 100% 100%;
+        }
+
+        #cont341 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t20.jpg");
+            background-size: 100% 100%;
+        }
+
+        #cont351 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t21.jpg");
+            background-size: 100% 100%;
+        }
+
+        #cont31>:nth-child(3),
+        #cont32>:nth-child(3),
+        #cont34>:nth-child(3),
+        #cont35>:nth-child(3) {
+            width: 100%;
+            height: 20px;
+            font-size: 0.9em;
+            line-height: 20px;
+            margin: 20px 0 0 0;
+            color: rgb(155, 155, 155);
+        }
+
+        #conte311 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t22.jpg");
+            background-size: 100% 100%;
+        }
+
+        #conte321 {
+            width: 100%;
+            height: 60%;
+            margin: 30px 0 0 0;
+            background-image: url("pic/t23.jpg");
+            background-size: 100% 100%;
+        }
+
+        #con4 {
+            width: 100%;
+            height: 30px;
+        }
+
+        #con4>:nth-child(1) {
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            margin: 5px 0 0 46%;
+            float: left;
+            font-size: 30px;
+            color: rgb(117, 117, 117);
+        }
+
+        #con4>:nth-child(2),
+        #con4>:nth-child(3) {
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            margin: 5px 0 0 1%;
+            float: left;
+            font-size: 30px;
+            color: rgb(204, 204, 204);
+        }
+
+        #con4>:nth-child(1):hover,
+        #con4>:nth-child(2):hover,
+        #con4>:nth-child(3):hover {
+            color: rgb(117, 117, 117);
+        }
+
+        #content4 {
+            width: 100%;
+            height: 470px;
+            background-image: linear-gradient(#f1f1f1, #ffffff);
+        }
+
+        #content4>:nth-child(1) {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 1.95em;
+            font-weight: 550;
+            letter-spacing: 10px;
+            color: rgb(66, 66, 66);
+        }
+
+        #nr1 {
+            width: 100%;
+            height: 340px;
+        }
+
+        #nr2 {
+            width: 100%;
+            height: 30px;
+        }
+
+        #nr2>:nth-child(1) {
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            margin: 5px 0 0 46%;
+            float: left;
+            font-size: 30px;
+            color: rgb(117, 117, 117);
+        }
+
+        #nr2>:nth-child(2),
+        #nr2>:nth-child(3) {
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            margin: 5px 0 0 1%;
+            float: left;
+            font-size: 30px;
+            color: rgb(204, 204, 204);
+        }
+
+        #nr2>:nth-child(1):hover,
+        #nr2>:nth-child(2):hover,
+        #nr2>:nth-child(3):hover {
+            color: rgb(117, 117, 117);
+        }
+
+        #nr11 {
+            display: block;
+            width: 100%;
+            height: 320px;
+            position: absolute;
+            top: 1250px;
+            left: 0%;
+        }
+
+        #nr11 ul {
+            list-style: none;
+            width: 96%;
+            height: 300px;
+            margin: 8px 3px 0 13px;
+            padding: 3px 0 0 20px;
+        }
+
+        #nr11 ul li:nth-child(1) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 8px 0 6px;
+            background-image: url("pic/t24.jpg");
+            background-size: 100% 100%;
+        }
+
+        #nr11 ul li:nth-child(2) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 0 0 7px;
+            background-image: url("pic/t25.jpg");
+            background-size: 100% 100%;
+        }
+
+        #nr12 {
+            display: none;
+            width: 100%;
+            height: 320px;
+            position: absolute;
+            top: 1250px;
+            left: 100%;
+        }
+
+        #nr12 ul {
+            list-style: none;
+            width: 96%;
+            height: 300px;
+            margin: 8px 3px 0 13px;
+            padding: 3px 0 0 20px;
+        }
+
+        #nr12 ul li:nth-child(1) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 8px 0 6px;
+            background-image: url("pic/t26.jpg");
+            background-size: 100% 100%;
+        }
+
+        #nr12 ul li:nth-child(2) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 0 0 7px;
+            background-image: url("pic/t27.png");
+            background-size: 100% 100%;
+        }
+
+        #nr13 {
+            display: none;
+            width: 100%;
+            height: 320px;
+            position: absolute;
+            top: 1250px;
+            left: 200%;
+        }
+
+        #nr13 ul {
+            list-style: none;
+            width: 96%;
+            height: 300px;
+            margin: 8px 3px 0 13px;
+            padding: 3px 0 0 20px;
+        }
+
+        #nr13 ul li:nth-child(1) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 8px 0 6px;
+            background-image: url("pic/t28.jpg");
+            background-size: 100% 100%;
+        }
+
+        #nr13 ul li:nth-child(2) {
+            float: left;
+            width: 48%;
+            height: 250px;
+            margin: 20px 0 0 7px;
+            background-image: url("pic/t29.jpg");
+            background-size: 100% 100%;
+        }
+
+        #n1 {
+            display: none;
+            width: 60px;
+            height: 80px;
+            background-color: rgba(204, 204, 204, 0.308);
+            position: absolute;
+            left: 0px;
+            top: 1370px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 50px;
+            z-index: 1001;
+        }
+
+        #n2 {
+            display: none;
+            width: 60px;
+            height: 80px;
+            background-color: rgba(204, 204, 204, 0.308);
+            position: absolute;
+            right: 0px;
+            top: 1370px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 50px;
+            z-index: 1001;
+        }
+
+        #content3 {
+            width: 100%;
+            height: 500px;
+            background-image: linear-gradient(#f1f1f1, #ffffff);
+        }
+
+        #content3>:nth-child(1) ul {
+            list-style: none;
+            width: 96%;
+            height: 100px;
+
+        }
+
+        #content3>:nth-child(1) ul li:nth-child(1) {
+            float: left;
+            width: 20%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 1.95em;
+            font-weight: 550;
+            margin: 0 0 0 38.5%;
+            letter-spacing: 10px;
+            color: rgb(66, 66, 66);
+        }
+
+        #content3>:nth-child(1) ul li:nth-child(2) {
+            float: left;
+            width: 6%;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 1em;
+            font-weight: 450;
+            margin: 48px 0 0 32%;
+            color: rgb(66, 66, 66);
+        }
+
+        #content3>:nth-child(1) ul li:nth-child(2):hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #c3 {
+            width: 96%;
+            height: 350px;
+        }
+
+        #c31 {
+            float: left;
+            width: 31%;
+            height: 350px;
+            margin: 0 1.5% 0 3.6%;
+            background-image: url("pic/tp2.jpg");
+            background-size: 100% 100%;
+        }
+
+        #c32 {
+            float: left;
+            width: 31%;
+            height: 350px;
+            margin: 0 1.5% 0 0;
+            background-image: url("pic/tp1.jpg");
+            background-size: 100% 100%;
+        }
+
+        #c33 {
+            float: left;
+            width: 31%;
+            height: 350px;
+            margin: 0;
+            background-image: url("pic/tp3.jpg");
+            background-size: 100% 100%;
+        }
+
+        #c31>:nth-child(1),
+        #c32>:nth-child(1),
+        #c33>:nth-child(1) {
+            width: 100%;
+            height: 50px;
+            font-size: 1.6em;
+            line-height: 50px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #c31>:nth-child(2),
+        #c32>:nth-child(2),
+        #c33>:nth-child(2) {
+            width: 100%;
+            height: 280px;
+        }
+
+        #c31>:nth-child(2) ul,
+        #c32>:nth-child(2) ul,
+        #c33>:nth-child(2) ul {
+            padding: 0px;
+            list-style: none;
+            width: 100%;
+            height: 30px;
+            margin: 10px 0 15px 0;
+        }
+
+        #c31>:nth-child(2) ul li:nth-child(1),
+        #c32>:nth-child(2) ul li:nth-child(1),
+        #c33>:nth-child(2) ul li:nth-child(1) {
+            float: left;
+            text-align: left;
+            width: 68%;
+            height: 30px;
+            font-size: 1.1em;
+        }
+
+        #c31>:nth-child(2) ul li:nth-child(2),
+        #c32>:nth-child(2) ul li:nth-child(2),
+        #c33>:nth-child(2) ul li:nth-child(2) {
+            line-height: 30px;
+            font-size: 0.9em;
+        }
+
+        #c31>:nth-child(2) ul li:hover,
+        #c32>:nth-child(2) ul li:hover,
+        #c33>:nth-child(2) ul li:hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #bottom {
+            width: 100%;
+            height: 100px;
+            background-color: #515151;
+        }
+
+        #bottom>div:nth-child(1) ul {
+            width: 100%;
+            height: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 20px 0 0 0;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(1) {
+            float: left;
+            width: 5%;
+            height: 20px;
+            line-height: 20px;
+            margin: 0 0 0 18%;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(5),
+        #bottom>div:nth-child(1) ul li:nth-child(9),
+        #bottom>div:nth-child(1) ul li:nth-child(11),
+        #bottom>div:nth-child(1) ul li:nth-child(13),
+        #bottom>div:nth-child(1) ul li:nth-child(15),
+        #bottom>div:nth-child(1) ul li:nth-child(17),
+        #bottom>div:nth-child(1) ul li:nth-child(19) {
+            float: left;
+            width: 5%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(7),
+        #bottom>div:nth-child(1) ul li:nth-child(3) {
+            float: left;
+            width: 8%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(1):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(7):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(3):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(5):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(9):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(11):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(13):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(15):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(17):hover,
+        #bottom>div:nth-child(1) ul li:nth-child(19):hover {
+            color: rgb(55, 190, 127);
+        }
+
+        #bottom>div:nth-child(1) ul li:nth-child(2),
+        #bottom>div:nth-child(1) ul li:nth-child(4),
+        #bottom>div:nth-child(1) ul li:nth-child(6),
+        #bottom>div:nth-child(1) ul li:nth-child(8),
+        #bottom>div:nth-child(1) ul li:nth-child(10),
+        #bottom>div:nth-child(1) ul li:nth-child(12),
+        #bottom>div:nth-child(1) ul li:nth-child(14),
+        #bottom>div:nth-child(1) ul li:nth-child(16),
+        #bottom>div:nth-child(1) ul li:nth-child(18) {
+            float: left;
+            width: 0.5%;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(2) {
+            width: 100%;
+            height: 20px;
+            margin: 0;
+            padding-top: 5px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        #bottom>div:nth-child(3) {
+            width: 100%;
+            height: 20px;
+            margin: 0;
+            padding-top: 6px;
+            line-height: 20px;
+            text-align: center;
+            color: #ddd;
+            font-size: 12px;
+        }
+
+        @media screen and (min-width:1200px) {
+            #ul1>:nth-child(8) {
+                width: 65px;
+                height: 90px;
+                position: relative;
+                top: 0px;
+                left: 3%;
+            }
+
+            #ul1>:nth-child(11) {
+                width: 110px;
+                height: 40px;
+                margin-top: 26px;
+                margin-left: 0px;
+                background-color: rgb(56, 201, 133);
+                border-radius: 3px;
+                color: rgb(255, 255, 255);
+                font-size: 0.78em;
+                line-height: 40px;
+                position: relative;
+                top: 0px;
+                left: 3%;
+            }
+        }
+
+        @media screen and (max-width:1160px) {
+            #txt {
+                display: none;
+            }
+
+            #ul1>:nth-child(7) {
+                width: 38px;
+                height: 37px;
+                position: relative;
+                top: 26px;
+                left: 0;
+                margin: 0px;
+                background-image: url("pic/fu2.png");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                border: 1px solid rgb(194, 194, 194);
+                border-radius: 2px;
+            }
+        }
+
+        @media screen and (max-width:1040px) {
+
+            #con2,
+            #list {
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <ul id="ul1">
+            <li></li>
+            <li>音乐馆</li>
+            <li>我的音乐</li>
+            <li id="u1">客户端
+                <ul id="ul12">
+                    <li>
+                        <p>HQ高品质 全员开启</p>
+                        <p>独家音效 全面升级</p>
+                        <p>轻盈视觉 动态皮肤</p>
+                    </li>
+                    <li><input type="button" value="下载体验" class="btn2"></li>
+                </ul>
+            </li>
+            <li>开放平台</li>
+            <li>VIP</li>
+            <li id="txt1">
+                <ul>
+                    <li><input type="text" id="txt" value="搜索音乐、MV、歌单、用户"></li>
+                </ul>
+            </li>
+            <li><a href="JavaScript:void(0)" onclick="openDialog()" id="f1">登录</a></li>
+            <div id="light">
+                <div id="light1">
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="openqq()" id="f3"
+                                style="color: rgb(56, 201, 133);">QQ登录</a></li>
+                        <li><a href="javascript:void(0)" onclick="openvx()" id="f4">微信登录</a></li>
+                        <li><a href="javascript:void(0)" onclick="closeDialog()" id="f2">×</a></li>
+                    </ul>
+                </div>
+                <div id="light2">
+                    <div id="li1">
+                        <div id="light21">
+                            <h1>快速安全登录</h1>
+                            <p>请使用QQ手机版扫描二维码，安全登录，防止盗号。</p>
+                            <div></div>
+                            <ul>
+                                <li>账号密码登录</li>
+                                <li>|</li>
+                                <li id="b"><a href="zhuce.html">注册新账号</a></li>
+                                <li>|</li>
+                                <li>意见反馈</li>
+                            </ul>
+                        </div>
+                        <div id="light22">
+                            <div>QQ音乐将获得以下权限</div>
+                            <div><input type="checkbox" value="" class="check">全选</div>
+                            <div><input type="checkbox" value="" class="check" checked>获得您的昵称、头像、性别</div>
+                            <div>授权后表明你已同意 QQ登录服务协议</div>
+                        </div>
+                    </div>
+                    <div id="li2">
+                        <div></div>
+                        <p>请使用微信扫描二维码登录“QQ音乐”</p>
+                        <p>QQ与微信账号的音乐资产、付费特权不互通</p>
+                    </div>
+                </div>
+                <div id="light3">
+                    <input type="button" value="下载客户端 体验更多内容" class="btn3">
+                </div>
+            </div>
+            <div id="fade"></div>
+            <li id="u2">开通VIP
+                <ul id="ul11">
+                    <li>开通绿钻豪华版</li>
+                    <li>开通付费包</li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    <div id="list">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="geshou.html">歌手</a></li>
+            <li>新碟</li>
+            <li>排行榜</li>
+            <li>分类歌单</li>
+            <li>电台</li>
+            <li>MV</li>
+            <li><a href="album.html">数字专辑</a></li>
+            <li>票务</li>
+        </ul>
+    </div>
+    <div id="kuang1">
+        <ul>
+            <li></li>
+            <li>千万高品质曲库尽享</li>
+            <li><input type="button" value="客户端下载" class="btn1"></li>
+        </ul>
+    </div>
+    <div id="kuang2">
+        <ul>
+            <li><a href="#banner">︿</a></li>
+            <li>反馈</li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="content1">
+        <div>新歌首发</div>
+        <div id="co1">
+            <div id="mv">
+                <video id="video" src="pic/mv1.mp4" type="video/mp4" autoplay="autoplay" loop="loop" controls="controls"
+                    height="400px" width="100%">
+                </video>
+            </div>
+        </div>
+        <div id="co2">
+            <div id="co21">
+                <div></div>
+                <div id="co211">
+                    <div id="co2111"><a href="danqu.html">味 (Hot Sauce) (맛)</a></div>
+                    <div>NCT DREAM</div>
+                </div>
+            </div>
+            <div id="co22">
+                <div></div>
+                <div id="co221">
+                    <div>Diggity</div>
+                    <div>NCT DREAM</div>
+                </div>
+            </div>
+            <div id="co23">
+                <div></div>
+                <div id="co231">
+                    <div>鲸鱼 (Dive Into You)</div>
+                    <div>NCT DREAM</div>
+                </div>
+            </div>
+            <div id="co24">
+                <div></div>
+                <div id="co241">
+                    <div>书签 (Rainbow)</div>
+                    <div>NCT DREAM</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content2">
+        <div>歌单推荐</div>
+        <div id="con2">
+            <ul>
+                <li>为你推荐</li>
+                <li>国语</li>
+                <li>流行</li>
+                <li>快乐</li>
+                <li>经典</li>
+                <li>伤感</li>
+            </ul>
+        </div>
+        <div id="con3">
+            <div id="co31">﹤</div>
+            <div id="cont1">
+                <div id="con31">
+                    <div id="con311">
+                        <div id="bf1"></div>
+                    </div>
+                    <div>开口便让你沉醉的神仙翻唱</div>
+                    <div>播放量：129.4万</div>
+                </div>
+                <div id="con32">
+                    <div id="con321">
+                        <div id="bf2"></div>
+                    </div>
+                    <div>治愈片段|你是温柔暮色笼罩我心</div>
+                    <div>播放量：127.9万</div>
+                </div>
+                <div id="con33">
+                    <div id="con331">
+                        <div id="bf3"></div>
+                    </div>
+                    <div>小众英文｜世间所有温柔涌向你</div>
+                    <div>播放量：2479.2万</div>
+                </div>
+                <div id="con34">
+                    <div id="con341">
+                        <div id="bf4"></div>
+                    </div>
+                    <div>清新曲调，赶走秋日愁绪</div>
+                    <div>播放量：315.2万</div>
+                </div>
+                <div id="con35">
+                    <div id="con351">
+                        <div id="bf5"></div>
+                    </div>
+                    <div>周深 | 温柔嗓音，清澈空灵</div>
+                    <div>播放量：3499.0万</div>
+                </div>
+            </div>
+            <div id="cont2">
+                <div id="cont31">
+                    <div id="cont311">
+                        <div id="bf11"></div>
+                    </div>
+                    <div>王俊凯 | 青春岁月都与你相关</div>
+                    <div>播放量：369.7万</div>
+                </div>
+                <div id="cont32">
+                    <div id="cont321">
+                        <div id="bf22"></div>
+                    </div>
+                    <div>助眠白噪音：调整开学生物钟</div>
+                    <div>播放量：178.5万</div>
+                </div>
+                <div id="cont33">
+                    <div id="cont331">
+                        <div id="bf33"></div>
+                    </div>
+                    <div>律动R&B · 欧美女声</div>
+                    <div>播放量：208.7万</div>
+                </div>
+                <div id="cont34">
+                    <div id="cont341">
+                        <div id="bf44"></div>
+                    </div>
+                    <div>滚石评最伟大乡村音乐Top 100</div>
+                    <div>播放量：499.7万</div>
+                </div>
+                <div id="cont35">
+                    <div id="cont351">
+                        <div id="bf55"></div>
+                    </div>
+                    <div>当代古典乐：走进孤独患者的禁地</div>
+                    <div>播放量：339.4万</div>
+                </div>
+            </div>
+            <div id="cont3">
+                <div id="conte31">
+                    <div id="conte311">
+                        <div id="bf111"></div>
+                    </div>
+                    <div>开口便让你沉醉的神仙翻唱</div>
+                    <div>播放量：153.0万</div>
+                </div>
+                <div id="conte32">
+                    <div id="conte321">
+                        <div id="bf222"></div>
+                    </div>
+                    <div>失眠疗养所 : 300首催眠纯音</div>
+                    <div>播放量：5928.2万</div>
+                </div>
+            </div>
+            <div id="co32">﹥</div>
+        </div>
+        <div id="con4">
+            <div id="con41">•</div>
+            <div id="con42">•</div>
+            <div id="con43">•</div>
+        </div>
+    </div>
+    <div id="content4">
+        <div>精彩推荐</div>
+        <div id="nr1">
+            <div id="n1">﹤</div>
+            <div id="nr11">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="nr12">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="nr13">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="n2">﹥</div>
+        </div>
+        <div id="nr2">
+            <div id="nr21">•</div>
+            <div id="nr22">•</div>
+            <div id="nr23">•</div>
+        </div>
+    </div>
+    <div id="content3">
+        <div>
+            <ul>
+                <li>排行榜</li>
+                <li>更多 ></li>
+            </ul>
+        </div>
+        <div id="c3">
+            <div id="c31">
+                <div>热歌榜</div>
+                <div>
+                    <ul>
+                        <li>1、热爱105°C的你</li>
+                        <li>阿肆</li>
+                    </ul>
+                    <ul>
+                        <li>2、来迟</li>
+                        <li>戴羽彤</li>
+                    </ul>
+                    <ul>
+                        <li>3、白鸽</li>
+                        <li>你的上好佳</li>
+                    </ul>
+                    <ul>
+                        <li>4、潮汐(Natural)</li>
+                        <li>安苏羽 /傅梦彤</li>
+                    </ul>
+                    <ul>
+                        <li>5、下辈子不一定还能遇见你</li>
+                        <li>陈雅森</li>
+                    </ul>
+                    <ul>
+                        <li>......</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="c32">
+                <div>新歌榜</div>
+                <div>
+                    <ul>
+                        <li>1、这世界那么多人</li>
+                        <li>莫文蔚</li>
+                    </ul>
+                    <ul>
+                        <li>2、别叫我达芬奇</li>
+                        <li>Lil Ghost小鬼</li>
+                    </ul>
+                    <ul>
+                        <li>3、Next Level</li>
+                        <li>aespa (에스파)</li>
+                    </ul>
+                    <ul>
+                        <li>4、翱翔</li>
+                        <li>20XX CLUB</li>
+                    </ul>
+                    <ul>
+                        <li>5、古蜀回响</li>
+                        <li>INTO1</li>
+                    </ul>
+                    <ul>
+                        <li>......</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="c33">
+                <div>飙升榜</div>
+                <div>
+                    <ul>
+                        <li>1、雾里</li>
+                        <li>姚六一</li>
+                    </ul>
+                    <ul>
+                        <li>2、半生雪</li>
+                        <li>是七叔呢</li>
+                    </ul>
+                    <ul>
+                        <li>3、古蜀回响</li>
+                        <li>INTO1</li>
+                    </ul>
+                    <ul>
+                        <li>4、潮汐(Natural)</li>
+                        <li>安苏羽 /傅梦彤</li>
+                    </ul>
+                    <ul>
+                        <li>5、沦陷</li>
+                        <li>王靖雯不胖</li>
+                    </ul>
+                    <ul>
+                        <li>......</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div>
+            <ul>
+                <li>关于腾讯</li>
+                <li>|</li>
+                <li>About Tencent</li>
+                <li>|</li>
+                <li>服务条款</li>
+                <li>|</li>
+                <li>用户服务协议</li>
+                <li>|</li>
+                <li>隐私政策</li>
+                <li>|</li>
+                <li>权利声明</li>
+                <li>|</li>
+                <li>广告服务</li>
+                <li>|</li>
+                <li>腾讯招聘</li>
+                <li>|</li>
+                <li>客服中心</li>
+                <li>|</li>
+                <li>网站导航</li>
+            </ul>
+        </div>
+        <div>Copyright © 1998 - 2021 Tencent. All Rights Reserved.</div>
+        <div>腾讯公司 版权所有 网络文化经营许可证：粤网文[2018]6725-2386号</div>
+    </div>
+</body>
+<script>
+    window.onload = init;
+    function init() {
+        var txt=document.getElementById("txt");
+        txt.onmouseover=function(){
+            txt.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt.onmouseout=function(){
+            txt.style.backgroundImage="url('pic/fu2.png')";
+        }
+
+        var txt1=document.getElementById("txt1");
+        txt1.onmouseover=function(){
+            txt1.style.backgroundImage="url('pic/fu21.png')";
+        }
+        txt1.onmouseout=function(){
+            txt1.style.backgroundImage="url('pic/fu2.png')";
+        }
+
+        var u1 = document.getElementById("u1");
+        u1.onmouseover = function () {
+            document.getElementById("ul12").style.display = "block";
+        }
+        u1.onmouseout = function () {
+            document.getElementById("ul12").style.display = "none";
+        }
+
+        var con3 = document.getElementById("con3");
+        con3.onmouseover = function () {
+            document.getElementById("co31").style.display = "block";
+            document.getElementById("co32").style.display = "block";
+        }
+        con3.onmouseout = function () {
+            document.getElementById("co31").style.display = "none";
+            document.getElementById("co32").style.display = "none";
+        }
+
+        var u2 = document.getElementById("u2");
+        u2.onmouseover = function () {
+            document.getElementById("ul11").style.display = "block";
+        }
+        u2.onmouseout = function () {
+            document.getElementById("ul11").style.display = "none";
+        }
+
+
+        var con311 = document.getElementById("con311");
+        con311.onmouseover = function () {
+            document.getElementById("bf1").style.display = "block";
+            document.getElementById("con311").style.backgroundSize = "103% 103%";
+        }
+        con311.onmouseout = function () {
+            document.getElementById("bf1").style.display = "none";
+            document.getElementById("con311").style.backgroundSize = "100% 100%";
+        }
+        var con321 = document.getElementById("con321");
+        con321.onmouseover = function () {
+            document.getElementById("bf2").style.display = "block";
+            document.getElementById("con321").style.backgroundSize = "103% 103%";
+        }
+        con321.onmouseout = function () {
+            document.getElementById("bf2").style.display = "none";
+            document.getElementById("con321").style.backgroundSize = "100% 100%";
+        }
+        var con331 = document.getElementById("con331");
+        con331.onmouseover = function () {
+            document.getElementById("bf3").style.display = "block";
+            document.getElementById("con331").style.backgroundSize = "103% 103%";
+        }
+        con331.onmouseout = function () {
+            document.getElementById("bf3").style.display = "none";
+            document.getElementById("con331").style.backgroundSize = "100% 100%";
+        }
+        var con341 = document.getElementById("con341");
+        con341.onmouseover = function () {
+            document.getElementById("bf4").style.display = "block";
+            document.getElementById("con341").style.backgroundSize = "103% 103%";
+        }
+        con341.onmouseout = function () {
+            document.getElementById("bf4").style.display = "none";
+            document.getElementById("con341").style.backgroundSize = "100% 100%";
+        }
+        var con351 = document.getElementById("con351");
+        con351.onmouseover = function () {
+            document.getElementById("bf5").style.display = "block";
+            document.getElementById("con351").style.backgroundSize = "103% 103%";
+        }
+        con351.onmouseout = function () {
+            document.getElementById("bf5").style.display = "none";
+            document.getElementById("con351").style.backgroundSize = "100% 100%";
+        }
+
+
+        var cont311 = document.getElementById("cont311");
+        cont311.onmouseover = function () {
+            document.getElementById("bf11").style.display = "block";
+            document.getElementById("cont311").style.backgroundSize = "103% 103%";
+        }
+        cont311.onmouseout = function () {
+            document.getElementById("bf11").style.display = "none";
+            document.getElementById("cont311").style.backgroundSize = "100% 100%";
+        }
+        var cont321 = document.getElementById("cont321");
+        cont321.onmouseover = function () {
+            document.getElementById("bf22").style.display = "block";
+            document.getElementById("cont321").style.backgroundSize = "103% 103%";
+        }
+        cont321.onmouseout = function () {
+            document.getElementById("bf22").style.display = "none";
+            document.getElementById("cont321").style.backgroundSize = "100% 100%";
+        }
+        var cont331 = document.getElementById("cont331");
+        cont331.onmouseover = function () {
+            document.getElementById("bf33").style.display = "block";
+            document.getElementById("cont331").style.backgroundSize = "103% 103%";
+        }
+        cont331.onmouseout = function () {
+            document.getElementById("bf33").style.display = "none";
+            document.getElementById("cont331").style.backgroundSize = "100% 100%";
+        }
+        var cont341 = document.getElementById("cont341");
+        cont341.onmouseover = function () {
+            document.getElementById("bf44").style.display = "block";
+            document.getElementById("cont341").style.backgroundSize = "103% 103%";
+        }
+        cont341.onmouseout = function () {
+            document.getElementById("bf44").style.display = "none";
+            document.getElementById("cont341").style.backgroundSize = "100% 100%";
+        }
+        var cont351 = document.getElementById("cont351");
+        cont351.onmouseover = function () {
+            document.getElementById("bf55").style.display = "block";
+            document.getElementById("cont351").style.backgroundSize = "103% 103%";
+        }
+        cont351.onmouseout = function () {
+            document.getElementById("bf55").style.display = "none";
+            document.getElementById("cont351").style.backgroundSize = "100% 100%";
+        }
+
+        var conte311 = document.getElementById("conte311");
+        conte311.onmouseover = function () {
+            document.getElementById("bf111").style.display = "block";
+            document.getElementById("conte311").style.backgroundSize = "103% 103%";
+        }
+        conte311.onmouseout = function () {
+            document.getElementById("bf111").style.display = "none";
+            document.getElementById("conte311").style.backgroundSize = "100% 100%";
+        }
+        var conte321 = document.getElementById("conte321");
+        conte321.onmouseover = function () {
+            document.getElementById("bf222").style.display = "block";
+            document.getElementById("conte321").style.backgroundSize = "103% 103%";
+        }
+        conte321.onmouseout = function () {
+            document.getElementById("bf222").style.display = "none";
+            document.getElementById("conte321").style.backgroundSize = "100% 100%";
+        }
+
+        var co31 = document.getElementById("co31");
+        co31.onclick = function () {
+            if (document.getElementById("cont1").style.display == "block") {
+                document.getElementById("cont1").style.display = "none";
+                document.getElementById("cont2").style.display = "none";
+                document.getElementById("cont3").style.display = "block";
+                document.getElementById("cont3").style.left = "0%";
+                con43.style.color = "rgb(117, 117, 117)";
+                con41.style.color = "rgb(204, 204, 204)";
+                con42.style.color = "rgb(204, 204, 204)";
+            } else if (document.getElementById("cont2").style.display == "block") {
+                document.getElementById("cont1").style.display = "block";
+                document.getElementById("cont3").style.display = "none";
+                document.getElementById("cont2").style.display = "none";
+                con41.style.color = "rgb(117, 117, 117)";
+                con43.style.color = "rgb(204, 204, 204)";
+                con42.style.color = "rgb(204, 204, 204)";
+            } else {
+                document.getElementById("cont2").style.display = "block";
+                document.getElementById("cont2").style.left = "0%";
+                document.getElementById("cont1").style.display = "none";
+                document.getElementById("cont3").style.display = "none";
+                con42.style.color = "rgb(117, 117, 117)";
+                con43.style.color = "rgb(204, 204, 204)";
+                con41.style.color = "rgb(204, 204, 204)";
+            }
+
+        }
+
+        var co32 = document.getElementById("co32");
+        co32.onclick = function () {
+            if (document.getElementById("cont1").style.display == "block") {
+                document.getElementById("cont1").style.display = "none";
+                document.getElementById("cont3").style.display = "none";
+                document.getElementById("cont2").style.display = "block";
+                document.getElementById("cont2").style.left = "0%";
+                con42.style.color = "rgb(117, 117, 117)";
+                con43.style.color = "rgb(204, 204, 204)";
+                con41.style.color = "rgb(204, 204, 204)";
+            } else if (document.getElementById("cont2").style.display == "block") {
+                document.getElementById("cont3").style.display = "block";
+                document.getElementById("cont3").style.left = "0%";
+                document.getElementById("cont1").style.display = "none";
+                document.getElementById("cont2").style.display = "none";
+                con43.style.color = "rgb(117, 117, 117)";
+                con41.style.color = "rgb(204, 204, 204)";
+                con42.style.color = "rgb(204, 204, 204)";
+            } else {
+                document.getElementById("cont1").style.display = "block";
+                document.getElementById("cont2").style.display = "none";
+                document.getElementById("cont3").style.display = "none";
+                con41.style.color = "rgb(117, 117, 117)";
+                con43.style.color = "rgb(204, 204, 204)";
+                con42.style.color = "rgb(204, 204, 204)";
+            }
+
+        }
+
+
+        var con41 = document.getElementById("con41");
+        var con42 = document.getElementById("con42");
+        var con43 = document.getElementById("con43");
+        con41.onclick = function () {
+            con41.style.color = "rgb(117, 117, 117)";
+            con42.style.color = "rgb(204, 204, 204)";
+            con43.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("cont1").style.display = "none") {
+                document.getElementById("cont2").style.display = "none";
+                document.getElementById("cont3").style.display = "none";
+                document.getElementById("cont1").style.display = "";
+                document.getElementById("cont1").style.left = "0%";
+            }
+
+        }
+
+
+        con42.onclick = function () {
+            con42.style.color = "rgb(117, 117, 117)";
+            con41.style.color = "rgb(204, 204, 204)";
+            con43.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("cont1").style.display = "none") {
+                document.getElementById("cont1").style.display = "none";
+                document.getElementById("cont3").style.display = "none";
+                document.getElementById("cont2").style.display = "block";
+                document.getElementById("cont2").style.left = "0%";
+            }
+
+        }
+
+        con43.onclick = function () {
+            con43.style.color = "rgb(117, 117, 117)";
+            con41.style.color = "rgb(204, 204, 204)";
+            con42.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("cont3").style.display = "none") {
+                document.getElementById("cont1").style.display = "none";
+                document.getElementById("cont2").style.display = "none";
+                document.getElementById("cont3").style.display = "block";
+                document.getElementById("cont3").style.left = "0%";
+            }
+
+        }
+
+        var nr1 = document.getElementById("nr1");
+        nr1.onmouseover = function () {
+            document.getElementById("n1").style.display = "block";
+            document.getElementById("n2").style.display = "block";
+        }
+        nr1.onmouseout = function () {
+            document.getElementById("n1").style.display = "none";
+            document.getElementById("n2").style.display = "none";
+        }
+        var n1 = document.getElementById("n1");
+        n1.onclick = function () {
+            if (document.getElementById("nr11").style.display == "block") {
+                document.getElementById("nr11").style.display = "none";
+                document.getElementById("nr12").style.display = "none";
+                document.getElementById("nr13").style.display = "block";
+                document.getElementById("nr13").style.left = "0%";
+                nr23.style.color = "rgb(117, 117, 117)";
+                nr21.style.color = "rgb(204, 204, 204)";
+                nr22.style.color = "rgb(204, 204, 204)";
+            } else if (document.getElementById("nr12").style.display == "block") {
+                document.getElementById("nr11").style.display = "block";
+                document.getElementById("nr13").style.display = "none";
+                document.getElementById("nr12").style.display = "none";
+                nr21.style.color = "rgb(117, 117, 117)";
+                nr23.style.color = "rgb(204, 204, 204)";
+                nr22.style.color = "rgb(204, 204, 204)";
+            } else {
+                document.getElementById("nr12").style.display = "block";
+                document.getElementById("nr12").style.left = "0%";
+                document.getElementById("nr11").style.display = "none";
+                document.getElementById("nr13").style.display = "none";
+                nr22.style.color = "rgb(117, 117, 117)";
+                nr23.style.color = "rgb(204, 204, 204)";
+                nr21.style.color = "rgb(204, 204, 204)";
+            }
+
+        }
+
+        var n2 = document.getElementById("n2");
+        n2.onclick = function () {
+            if (document.getElementById("nr11").style.display == "block") {
+                document.getElementById("nr11").style.display = "none";
+                document.getElementById("nr13").style.display = "none";
+                document.getElementById("nr12").style.display = "block";
+                document.getElementById("nr12").style.left = "0%";
+                nr22.style.color = "rgb(117, 117, 117)";
+                nr23.style.color = "rgb(204, 204, 204)";
+                nr21.style.color = "rgb(204, 204, 204)";
+            } else if (document.getElementById("nr12").style.display == "block") {
+                document.getElementById("nr13").style.display = "block";
+                document.getElementById("nr13").style.left = "0%";
+                document.getElementById("nr11").style.display = "none";
+                document.getElementById("nr12").style.display = "none";
+                nr23.style.color = "rgb(117, 117, 117)";
+                nr21.style.color = "rgb(204, 204, 204)";
+                nr22.style.color = "rgb(204, 204, 204)";
+            } else {
+                document.getElementById("nr11").style.display = "block";
+                document.getElementById("nr12").style.display = "none";
+                document.getElementById("nr13").style.display = "none";
+                nr21.style.color = "rgb(117, 117, 117)";
+                nr23.style.color = "rgb(204, 204, 204)";
+                nr22.style.color = "rgb(204, 204, 204)";
+            }
+
+        }
+        var nr21 = document.getElementById("nr21");
+        var nr22 = document.getElementById("nr22");
+        var nr23 = document.getElementById("nr23");
+        nr21.onclick = function () {
+            nr21.style.color = "rgb(117, 117, 117)";
+            nr22.style.color = "rgb(204, 204, 204)";
+            nr23.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("nr11").style.display = "none") {
+                document.getElementById("nr12").style.display = "none";
+                document.getElementById("nr13").style.display = "none";
+                document.getElementById("nr11").style.display = "block";
+                document.getElementById("nr11").style.left = "0%";
+            }
+
+        }
+
+
+        nr22.onclick = function () {
+            nr22.style.color = "rgb(117, 117, 117)";
+            nr21.style.color = "rgb(204, 204, 204)";
+            nr23.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("nr11").style.display = "none") {
+                document.getElementById("nr11").style.display = "none";
+                document.getElementById("nr13").style.display = "none";
+                document.getElementById("nr12").style.display = "block";
+                document.getElementById("nr12").style.left = "0%";
+            }
+
+        }
+
+        nr23.onclick = function () {
+            nr23.style.color = "rgb(117, 117, 117)";
+            nr21.style.color = "rgb(204, 204, 204)";
+            nr22.style.color = "rgb(204, 204, 204)";
+            if (document.getElementById("nr13").style.display = "none") {
+                document.getElementById("nr11").style.display = "none";
+                document.getElementById("nr12").style.display = "none";
+                document.getElementById("nr13").style.display = "block";
+                document.getElementById("nr13").style.left = "0%";
+            }
+
+        }
+
+    }
+    function openDialog() {
+        document.getElementById('light').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+    }
+    function closeDialog() {
+        document.getElementById('light').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+    }
+    function openqq() {
+        document.getElementById("f3").style.color = " rgb(55, 190, 127)";
+        document.getElementById("f4").style.color = " black";
+        document.getElementById('li1').style.display = 'block';
+        document.getElementById('li2').style.display = 'none';
+    }
+    function openvx() {
+        document.getElementById("f4").style.color = " rgb(55, 190, 127)";
+        document.getElementById("f3").style.color = " black";
+        document.getElementById('li2').style.display = 'block';
+        document.getElementById('li1').style.display = 'none';
+    }
+</script>
+
+</html>
